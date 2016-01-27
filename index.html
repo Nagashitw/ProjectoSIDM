@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <head>
 <!-- Include meta tag to ensure proper rendering and touch zooming -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <title>SIDM Projecto</title>
 <!-- Include jQuery Mobile stylesheets -->
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -12,9 +15,46 @@
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 <!-- Include no JQuery Mobile FlatUI-->
-<link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
+<link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />4
+
+<!-- Fontawesome CDN -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 
 </head>
 <body>
-asada
+
+  <div data-role="page" id="pageone">
+  <div data-role="header">
+    <h1>Cálculos Rápidos</h1>
+
+  </div>
+
+  <div data-role="main" class="ui-content">
+    <button data-icon="flat-settings" data-theme="a" class="ui-btn-hidden" data-disabled="false">Button A</button>
+<!--<a href="#anylink" class=""><img src="images/conversormedidas.png"></a>-->
+    </div>
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+</div>
+<div data-role="page" id="pagetwo">
+<div data-role="header">
+  <h1>SIDM APP02</h1>
+
+  <div data-role="controlgroup" data-type="horizontal">
+
+    <a href="#" class=	"ui-btn ui-icon-refresh ui-btn-icon-left" onclick="window.localtion.reload()">Reload</a>
+    <a href="#" class="ui-btn ui-icon-bars ui-btn-icon-left" onclick="getAlbuns()">Albuns (refresh)</a>
+    <a href="#pagetwo" class="ui-btn ui-icon-action ui-btn-icon-left">Importar Imagem</a>
+    <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+
+  </div>
+</div>
+
+<div data-role="main" class="ui-content">
+
+</div></div>
+
+
+
 </body>
