@@ -1,6 +1,9 @@
+<!DOCTYPE html>
 <head>
 <!-- Include meta tag to ensure proper rendering and touch zooming -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
 <title>SIDM Projecto</title>
 <!-- Include jQuery Mobile stylesheets -->
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
@@ -14,7 +17,55 @@
 <!-- Include no JQuery Mobile FlatUI-->
 <link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
 
+<!-- Include do Script para as Dropdowns-->
+<script src="scripts/jquery.ddslick.js"></script>
+<script src="scripts/jquery.ddslick.min.js"></script>
+
+<!-- Fontawesome CDN -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+
 </head>
 <body>
-asada
+<!-- Página Referente ao Menu Inicial -->
+  <div data-role="page" id="MenuInicial">
+  <div data-role="header"> <!--Header do Menu Inicial -->
+    <h1>Cálculos Rápidos</h1>
+  </div>
+
+  <div data-role="main" class="ui-content"> <!-- Main do Menu Inicial -->
+    <img src="images/convertermoeda128.png" alt="conversor de moedas"></img>
+<a href="#ConversorMoedas">Ir para Conversor Moedas</a>
+    </div><!--Fim da Div do Main da Pagina do Conversor de Medidas -->
+
+    <div data-role="footer"> <!-- Footer do Menu Inicial -->
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+</div><!-- Fim do Menu Inicial-->
+
+
+<!-- Página Referente ao Menu do Conversor de Medidas  -->
+<div data-role="page" id="ConversorMoedas">
+
+  <div data-role="header">
+    <h1>Cálculos Rápidos</h1>
+  </div>
+
+
+<div data-role="main" class="ui-content">
+
+  Introduza o valor<br>
+  <input type="text" name="valor"><br>
+    <div id="Moeda1"></div>
+
+
+</div><!--Fim da Div do Main da Pagina do Conversor de Medidas -->
+
+<div data-role="footer">
+  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+</div>
+
+</div><!--Fim da Pagina do Convesor de Medidas -->
+
+
+
 </body>
