@@ -15,45 +15,56 @@
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
 <!-- Include no JQuery Mobile FlatUI-->
-<link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />4
+<link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
+
+<!-- Include do Script para as Dropdowns-->
+<script src="scripts/jquery.ddslick.js"></script>
+<script src="scripts/jquery.ddslick.min.js"></script>
 
 <!-- Fontawesome CDN -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 
 </head>
 <body>
-
-  <div data-role="page" id="pageone">
-  <div data-role="header">
+<!-- Página Referente ao Menu Inicial -->
+  <div data-role="page" id="MenuInicial">
+  <div data-role="header"> <!--Header do Menu Inicial -->
     <h1>Cálculos Rápidos</h1>
-
   </div>
 
-  <div data-role="main" class="ui-content">
-    <button data-icon="flat-settings" data-theme="a" class="ui-btn-hidden" data-disabled="false">Button A</button>
-<!--<a href="#anylink" class=""><img src="images/conversormedidas.png"></a>-->
-    </div>
-    <div data-role="footer">
+  <div data-role="main" class="ui-content"> <!-- Main do Menu Inicial -->
+    <img src="images/convertermoeda128.png" alt="conversor de moedas"></img>
+<a href="#ConversorMoedas">Ir para Conversor Moedas</a>
+    </div><!--Fim da Div do Main da Pagina do Conversor de Medidas -->
+
+    <div data-role="footer"> <!-- Footer do Menu Inicial -->
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
-</div>
-<div data-role="page" id="pagetwo">
-<div data-role="header">
-  <h1>SIDM APP02</h1>
+</div><!-- Fim do Menu Inicial-->
 
-  <div data-role="controlgroup" data-type="horizontal">
 
-    <a href="#" class=	"ui-btn ui-icon-refresh ui-btn-icon-left" onclick="window.localtion.reload()">Reload</a>
-    <a href="#" class="ui-btn ui-icon-bars ui-btn-icon-left" onclick="getAlbuns()">Albuns (refresh)</a>
-    <a href="#pagetwo" class="ui-btn ui-icon-action ui-btn-icon-left">Importar Imagem</a>
-    <a href="#" class="ui-btn ui-icon-back ui-btn-icon-left">Back</a>
+<!-- Página Referente ao Menu do Conversor de Medidas  -->
+<div data-role="page" id="ConversorMoedas">
 
+  <div data-role="header">
+    <h1>Cálculos Rápidos</h1>
   </div>
-</div>
+
 
 <div data-role="main" class="ui-content">
 
-</div></div>
+  Introduza o valor<br>
+  <input type="text" name="valor"><br>
+    <div id="Moeda1"></div>
+
+
+</div><!--Fim da Div do Main da Pagina do Conversor de Medidas -->
+
+<div data-role="footer">
+  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+</div>
+
+</div><!--Fim da Pagina do Convesor de Medidas -->
 
 
 
