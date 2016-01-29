@@ -4,6 +4,66 @@
 //Website: http://designwithpc.com
 //Twitter: http://twitter.com/chaudharyp
 
+//Dropdown plugin data
+var ddData = [
+    {
+        text: "Euro",
+        value: 1,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/eur.png"
+    },
+    {
+        text: "Dólar Americano",
+        value: 2,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/usd.png"
+    },
+    {
+        text: "Yen",
+        value: 3,
+        selected: true,
+        description: "",
+        imageSrc: "images/bandeiras/jpy.png"
+    },
+    {
+        text: "Libra Estrelina",
+        value: 4,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/gbp.png"
+    },
+    {
+        text: "Real",
+        value: 5,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/brl.png"
+    },
+    {
+        text: "Won",
+        value: 6,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/krw.png"
+    },
+    {
+        text: "Dólar Canadiano",
+        value: 7,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/CAD.png"
+    },
+    {
+        text: "Dólar Australiano",
+        value: 8,
+        selected: false,
+        description: "",
+        imageSrc: "images/bandeiras/AUD.png"
+    }
+];
+
 (function ($) {
 
     $.fn.ddslick = function (method) {
