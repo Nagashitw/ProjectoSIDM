@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+  <title>Calculadora Simples</title>
 <!-- Include meta tag to ensure proper rendering and touch zooming -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -22,6 +23,9 @@
 <!-- Include de Funcoes Javascript do Trabalho-->
 <script src="scripts/funcoes.js"></script>
 
+<!-- Stylesheet do Trabalho-->
+<link rel="stylesheet" type="text/css" href="css/style.css">
+
 <!-- Fontawesome CDN -->
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
 
@@ -37,7 +41,8 @@
 
   <div data-role="main" class="ui-content"> <!-- Main do Menu Inicial -->
 	 <!-- <img src="images/convertermoeda128.png" alt="conversor de moedas"></img> -->
-	 	<a href="#ConversorMoedas">Ir para Conversor Moedas</a>
+	 	<a href="#ConversorMoedas">Ir para Conversor Moedas</a><br>
+    <a href="#ConversorMedidas">Conversor Medidas</a>
 	</div><!--Fim da Div do Main da Pagina inicial -->
 
 	 <div data-role="footer"> <!-- Footer do Menu Inicial -->
@@ -81,10 +86,9 @@
 
 <div data-role="main" class="ui-content">
 
-  Introduza o valor<br>
-  <input type="text" name="valor"><br>
-	 <div id="Moeda"></div>
-
+  <a href="#ConversorPeso">Converter Peso</a><br />
+  <a href="#ConversorAltura">Conversor Altura</a><br />
+  <a href="#ConversorArmazenamento">Conversor Armazenamento</a><br />
 
 </div><!--Fim da Div do Main da Pagina do Conversor de Medidas -->
 
@@ -93,5 +97,69 @@
 </div>
 
 </div><!--Fim da Pagina do Convesor de Medidas -->
+
+<!-- Conversor de Peso  -->
+<div data-role="page"  id="ConversorPeso">
+  <div data-role="header" data-position="fixed">
+	 <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+	 <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+	 <h1>Conversor de Peso</h1>
+  </div>
+
+
+<div data-role="main" class="ui-content">
+<div>
+<h3 >De:</h3>
+    <select name="select-choice-0" id="select-choice-min" data-mini="true">
+     <label for="select-choice-1" class="select">De:</label>
+     <option value="kg">Kg</option>
+     <option value="pnd">Libras</option>
+     <option value="tonelada">Tonelada</option>
+     <option value="arroba">Arroba</option>
+   </select>
+
+<input type="number" data-mini="true" name="valor" min="1" max="999999999">
+<h3>Para:</h3>
+<label id="resultadopeso" title="resultadopeso">Futebol</label>
+</div>
+
+</div>
+
+<div data-role="footer">
+  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+</div>
+
+</div><!--Fim da Pagina do Convesor de Velocidade -->
+
+<!-- Conversor de Peso  -->
+<div data-role="page"  id="ConversorVelocidade">
+  <div data-role="header" data-position="fixed">
+	 <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+	 <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+	 <h1>Conversor de Peso</h1>
+  </div>
+
+
+<div data-role="main" class="ui-content">
+<div class="center-wrapper">
+<h3 >De:</h3>
+    <select name="select-choice-0" id="select-choice-min" data-mini="true">
+     <label for="select-choice-1" class="select">De:</label>
+     <option value="kph">Kilometros por Hora</option>
+     <option value="mph">Milhas por Hora</option>
+   </select>
+
+<input type="number" data-mini="true" name="valor" min="1" max="999999999">
+<h3>Para:</h3>
+<label id="resultadopeso" title="resultadovelocidade">Futebol</label>
+</div>
+
+</div>
+
+<div data-role="footer">
+  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+</div>
+
+</div><!--Fim da Pagina do Convesor de Velocidade -->
 
 </body>
