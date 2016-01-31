@@ -1,0 +1,13 @@
+#wrapper {
+    margin:0 auto;
+    width:1239px;
+    height:1022px;
+    background:#ffffff;
+    position:relative;
+}
+.center-wrapper{
+  text-align: center;
+}
+.center-button{
+  margin: 0 auto;
+}
