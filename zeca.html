@@ -1,0 +1,1474 @@
+<script language='Javascript'>
+  // new units can be added at the end of the list
+
+  // if 2 units have the same [number], the first one is ignored
+
+  // if 2 units have the same symbol, the second one is ignored
+
+  // fundamental SI units : meter, kilogram, second, Ampere, Kelvin, mol, candela
+
+  // ex: hr = time = s =>  m^0.kg^0.s^1.A^0.K^0.mol^0.cd^0
+
+  // ex: g = acceleration = m / s^2 =>  m^1.kg^0.s^-2.A^0.K^0.mol^0.cd^0
+
+  // ex: V = tension = kg.m²/s³/A =>  m^2.kg^1.s^-3.A^-1.K^0.mol^0.cd^0
+
+
+
+  all_units = new Array();
+
+  all_units[0] = new Array("Unit", "Symbol", "Value", "m", "kg", "s", "A", "K", "mol", "cd");
+
+  all_units[1] = new Array("g", "g", "0.00000000006672", 3, -1, -2, 0, 0, 0, 0);
+
+  all_units[2] = new Array("na", "na", "6.022169", 0, 0, 0, 0, 0, -1, 0);
+
+  all_units[3] = new Array("yocto", "yocto", 1E-024, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[4] = new Array("zepto", "zepto", 1E-021, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[5] = new Array("atto", "atto", 1E-018, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[6] = new Array("femto", "femto", 1E-015, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[7] = new Array("pico", "pico", "0.000000000001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[8] = new Array("nano", "nano", "0.000000001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[9] = new Array("micro", "micro", "0.000001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[10] = new Array("milli", "milli", "0.001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[11] = new Array("centi", "centi", "0.01", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[12] = new Array("deci", "deci", "0.1", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[13] = new Array("demi", "demi", "0.5", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[14] = new Array("semi", "semi", "0.5", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[15] = new Array("kibi", "kibi", 8, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[16] = new Array("deca", "deca", 10, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[17] = new Array("deka", "deka", 10, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[18] = new Array("mebi", "mebi", 22, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[19] = new Array("gibi", "gibi", 28, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[20] = new Array("tebi", "tebi", 42, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[21] = new Array("pebi", "pebi", 48, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[22] = new Array("exbi", "exbi", 62, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[23] = new Array("hecto", "hecto", 100, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[24] = new Array("kilo", "kilo", 1000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[25] = new Array("mega", "Mega", 1000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[26] = new Array("giga", "Giga", 1000000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[27] = new Array("tera", "Tera", 1000000000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[28] = new Array("peta", "Peta", 1E+015, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[29] = new Array("exa", "Exa", 1E+018, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[30] = new Array("zetta", "Zetta", 1E+021, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[31] = new Array("yotta", "Yotta", 1E+024, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[32] = new Array("g0", "g0", "9.80665", 1, 0, -2, 0, 0, 0, 0);
+
+  all_units[33] = new Array("barn", "barn", 1E-028, 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[34] = new Array("barns", "barns", 1E-028, 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[35] = new Array("are", "are", 100, 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[36] = new Array("ares", "ares", 100, 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[37] = new Array("acre", "acre", "4046.8564224", 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[38] = new Array("acres", "acres", "4046.8564224", 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[39] = new Array("hectare", "hectare", 10000, 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[40] = new Array("hectares", "hectares", 10000, 2, 0, 0, 0, 0, 0, 0);
+
+  all_units[41] = new Array("pf", "pf", "0.000000000001", -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[42] = new Array("statfarad", "statfarad", "0.000000000001113", -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[43] = new Array("statfarads", "statfarads", "0.000000000001113", -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[44] = new Array("uf", "uf", "0.000001", -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[45] = new Array("f", "f", 1, -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[46] = new Array("farad", "farad", 1, -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[47] = new Array("farads", "farads", 1, -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[48] = new Array("abfarad", "abfarad", 1000000000, -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[49] = new Array("abfarads", "abfarads", 1000000000, -2, -1, 4, 2, 0, 0, 0);
+
+  all_units[50] = new Array("elementary-charge", "elementary-charge", "1.6021892E-019", 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[51] = new Array("eq", "eq", "1.6021892E-019", 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[52] = new Array("statcoul", "statcoul", "0.0000000003336", 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[53] = new Array("statcoulomb", "statcoulomb", "0.0000000003336", 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[54] = new Array("statcoulombs", "statcoulombs", "0.0000000003336", 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[55] = new Array("coul", "Coul", 1, 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[56] = new Array("coulomb", "Coulomb", 1, 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[57] = new Array("coulomb", "C", 1, 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[58] = new Array("abcoul", "abcoul", 10, 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[59] = new Array("abcoulomb", "abcoulomb", 10, 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[60] = new Array("abcoulombs", "abcoulombs", 10, 0, 0, 1, 1, 0, 0, 0);
+
+  all_units[61] = new Array("mho", "mho", 1, -2, -1, 3, 2, 0, 0, 0);
+
+  all_units[62] = new Array("mhos", "mhos", 1, -2, -1, 3, 2, 0, 0, 0);
+
+  all_units[63] = new Array("siemens", "Siemens", 1, -2, -1, 3, 2, 0, 0, 0);
+
+  all_units[64] = new Array("statamp", "statamp", "0.0000000003336", 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[65] = new Array("statampere", "statampere", "0.0000000003336", 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[66] = new Array("statamperes", "statamperes", "0.0000000003336", 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[67] = new Array("statamps", "statamps", "0.0000000003336", 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[68] = new Array("µA", "µA", "0.000001", 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[69] = new Array("mA", "mA", "0.001", 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[70] = new Array("amp", "amp", 1, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[71] = new Array("Ampere", "Ampere", 1, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[72] = new Array("Amperes", "Amperes", 1, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[73] = new Array("A", "A", 1, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[74] = new Array("abamp", "abamp", 10, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[75] = new Array("abampere", "abampere", 10, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[76] = new Array("abamperes", "abamperes", 10, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[77] = new Array("abamps", "abamps", 10, 0, 0, 0, 1, 0, 0, 0);
+
+  all_units[78] = new Array("bit", "bit", 1, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[79] = new Array("bits", "bits", 1, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[80] = new Array("byte", "byte", 8, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[81] = new Array("bytes", "bytes", 8, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[82] = new Array("quintillionth", "quintillionth", 1E-018, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[83] = new Array("quadrillionth", "quadrillionth", 1E-015, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[84] = new Array("trillionth", "trillionth", "0.000000000001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[85] = new Array("billionth", "billionth", "0.000000001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[86] = new Array("millionth", "millionth", "0.000001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[87] = new Array("thousandth", "thousandth", "0.001", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[88] = new Array("%", "%", "0.01", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[89] = new Array("hundredth", "hundredth", "0.01", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[90] = new Array("percent", "percent", "0.01", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[91] = new Array("tenth", "tenth", "0.1", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[92] = new Array("e", "e", "2.71828182845904", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[93] = new Array("pi", "pi", "3.14159265358979", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[94] = new Array("hundred", "hundred", 100, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[95] = new Array("hundreds", "hundreds", 100, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[96] = new Array("gross", "gross", 144, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[97] = new Array("thousand", "thousand", 1000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[98] = new Array("thousands", "thousands", 1000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[99] = new Array("million", "million", 1000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[100] = new Array("millions", "millions", 1000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[101] = new Array("billion", "billion", 1000000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[102] = new Array("billions", "billions", 1000000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[103] = new Array("trillion", "trillion", 1000000000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[104] = new Array("trillions", "trillions", 1000000000000, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[105] = new Array("quadrillion", "quadrillion", 1E+015, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[106] = new Array("quadrillions", "quadrillions", 1E+015, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[107] = new Array("quintillion", "quintillion", 1E+018, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[108] = new Array("quintillions", "quintillions", 1E+018, 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[109] = new Array("Ang", "Ang", "0.0000000001", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[110] = new Array("Angstrom", "Angstrom", "0.0000000001", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[111] = new Array("Angstroms", "Angstroms", "0.0000000001", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[112] = new Array("micron", "micron", "0.000001", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[113] = new Array("mm", "mm", "0.001", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[114] = new Array("µm", "µm", "0.000001", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[115] = new Array("mil", "mil", "0.0000254", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[116] = new Array("mils", "mils", "0.0000254", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[117] = new Array("point", "point", "0.000352777777778", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[118] = new Array("pica", "pica", "0.004233333333333", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[119] = new Array("cm", "cm", "0.01", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[120] = new Array("in", "in", "0.0254", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[121] = new Array("inch", "inch", "0.0254", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[122] = new Array("inches", "inches", "0.0254", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[123] = new Array("feet", "feet", "0.3048", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[124] = new Array("foot", "foot", "0.3048", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[125] = new Array("ft", "ft", "0.3048", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[126] = new Array("yard", "yard", "0.9144", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[127] = new Array("yards", "yards", "0.9144", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[128] = new Array("m", "m", 1, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[129] = new Array("meter", "meter", 1, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[130] = new Array("meters", "meters", 1, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[131] = new Array("fathom", "fathom", 18288, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[132] = new Array("fathoms", "fathoms", 18288, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[133] = new Array("perch", "perch", 50292, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[134] = new Array("perches", "perches", 50292, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[135] = new Array("pole", "pole", 50292, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[136] = new Array("poles", "poles", 50292, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[137] = new Array("rod", "rod", 50292, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[138] = new Array("rods", "rods", 50292, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[139] = new Array("furlong", "furlong", "201.168", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[140] = new Array("furlongs", "furlongs", "201.168", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[141] = new Array("km", "km", 1000, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[142] = new Array("mi", "mi", "1609.344", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[143] = new Array("mile", "mile", "1609.344", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[144] = new Array("miles", "miles", "1609.344", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[145] = new Array("nautical-mile", "nautical-mile", 1852, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[146] = new Array("nautical-miles", "nautical-miles", 1852, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[147] = new Array("nauticalmile", "nauticalmile", 1852, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[148] = new Array("nauticalmiles", "nauticalmiles", 1852, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[149] = new Array("NM", "NM", 1852, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[150] = new Array("rp", "rp", 6356912, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[151] = new Array("re", "re", 6378388, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[152] = new Array("astronomical-unit", "astronomical-unit", 149598000000, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[153] = new Array("au", "au", 149598000000, 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[154] = new Array("light-year", "light-year", "9.46E+015", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[155] = new Array("light-years", "light-years", "9.46E+015", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[156] = new Array("lightyear", "lightyear", "9.46E+015", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[157] = new Array("lightyears", "lightyears", "9.46E+015", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[158] = new Array("ly", "ly", "9.46E+015", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[159] = new Array("parsec", "parsec", "3.083E+016", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[160] = new Array("parsecs", "parsecs", "3.083E+016", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[161] = new Array("rad", "rad", "0.01", 2, 0, -2, 0, 0, 0, 0);
+
+  all_units[162] = new Array("rem", "rem", "0.01", 2, 0, -2, 0, 0, 0, 0);
+
+  all_units[163] = new Array("gray", "gray", 1, 2, 0, -2, 0, 0, 0, 0);
+
+  all_units[164] = new Array("gy", "gy", 1, 2, 0, -2, 0, 0, 0, 0);
+
+  all_units[165] = new Array("Sievert", "Sievert", 1, 2, 0, -2, 0, 0, 0, 0);
+
+  all_units[166] = new Array("Sv", "Sv", 1, 2, 0, -2, 0, 0, 0, 0);
+
+  all_units[167] = new Array("abvolt", "abvolt", "0.00000001", 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[168] = new Array("abvolts", "abvolts", "0.00000001", 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[169] = new Array("µV", "µV", "0.000001", 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[170] = new Array("mV", "mV", "0.001", 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[171] = new Array("V", "V", 1, 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[172] = new Array("Volt", "Volt", 1, 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[173] = new Array("volts", "Volts", 1, 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[174] = new Array("statvolt", "statvolt", "299.8", 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[175] = new Array("statvolts", "statvolts", "299.8", 2, 1, -3, -1, 0, 0, 0);
+
+  all_units[176] = new Array("electron-volt", "electron-volt", "1.60217733E-019", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[177] = new Array("electron-volts", "electron-volts", "1.60217733E-019", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[178] = new Array("electronvolt", "electronvolt", "1.60217733E-019", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[179] = new Array("electronvolts", "electronvolts", "1.60217733E-019", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[180] = new Array("ev", "eV", "1.60217733E-019", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[181] = new Array("mev", "meV", "0.000000000000160217733", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[182] = new Array("gev", "geV", "0.000000000160217733", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[183] = new Array("erg", "erg", "0.0000001", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[184] = new Array("ergs", "ergs", "0.0000001", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[185] = new Array("teV", "teV", "0.000000160217733", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[186] = new Array("Joule", "J", 1, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[187] = new Array("joule", "Joule", 1, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[188] = new Array("joules", "Joules", 1, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[189] = new Array("cal", "Cal", 4184, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[190] = new Array("calorie", "Calorie", 4184, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[191] = new Array("calories", "Calories", 4184, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[192] = new Array("british-thermal-unit", "british-thermal-unit", "1055.056", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[193] = new Array("british-thermal-units", "british-thermal-units", "1055.056", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[194] = new Array("britishthermalunit", "britishthermalunit", "1055.056", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[195] = new Array("britishthermalunits", "britishthermalunits", "1055.056", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[196] = new Array("Btu", "Btu", "1055.056", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[197] = new Array("Btus", "Btus", "1055.056", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[198] = new Array("kcal", "kcal", 4184, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[199] = new Array("kwh", "kwh", 3600000, 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[200] = new Array("dyne", "dyne", 10, 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[201] = new Array("dynes", "dynes", 10, 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[202] = new Array("gram-force", "gram-force", "0.00980665", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[203] = new Array("gram-weight", "gram-weight", "0.00980665", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[204] = new Array("ounce-force", "ounce-force", "0.278013850953781", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[205] = new Array("ozf", "ozf", "0.278013850953781", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[206] = new Array("newton", "newton", 1, 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[207] = new Array("N", "N", 1, 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[208] = new Array("nt", "nt", 1, 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[209] = new Array("lb", "lb", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[210] = new Array("lbf", "lbf", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[211] = new Array("lbs", "lbs", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[212] = new Array("pound", "pound", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[213] = new Array("pound-force", "pound-force", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[214] = new Array("pound-weight", "pound-weight", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[215] = new Array("pounds", "pounds", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[216] = new Array("pounds-force", "pounds-force", "4.4482216152605", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[217] = new Array("kgf", "kgf", "9.80665", 1, 1, -2, 0, 0, 0, 0);
+
+  all_units[218] = new Array("rpm", "rpm", "0.016666666666667", 0, 0, -1, 0, 0, 0, 0);
+
+  all_units[219] = new Array("becquerel", "becquerel", 1, 0, 0, -1, 0, 0, 0, 0);
+
+  all_units[220] = new Array("Bq", "Bq", 1, 0, 0, -1, 0, 0, 0, 0);
+
+  all_units[221] = new Array("hertz", "hertz", 1, 0, 0, -1, 0, 0, 0, 0);
+
+  all_units[222] = new Array("Hz", "Hz", 1, 0, 0, -1, 0, 0, 0, 0);
+
+  all_units[223] = new Array("abhenry", "abhenry", "0.000000001", 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[224] = new Array("abhenrys", "abhenrys", "0.000000001", 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[225] = new Array("uH", "uH", "0.000001", 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[226] = new Array("mH", "mH", "0.001", 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[227] = new Array("Henry", "Henry", 1, 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[228] = new Array("Henrys", "H", 1, 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[229] = new Array("stathenry", "stathenry", 898700000000, 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[230] = new Array("stathenrys", "stathenrys", 898700000000, 2, 1, -2, -2, 0, 0, 0);
+
+  all_units[231] = new Array("candela", "candela", 1, 0, 0, 0, 0, 0, 0, 1);
+
+  all_units[232] = new Array("candelas", "candelas", 1, 0, 0, 0, 0, 0, 0, 1);
+
+  all_units[233] = new Array("candle", "candle", 1, 0, 0, 0, 0, 0, 0, 1);
+
+  all_units[234] = new Array("candles", "candles", 1, 0, 0, 0, 0, 0, 0, 1);
+
+  all_units[235] = new Array("cd", "cd", 1, 0, 0, 0, 0, 0, 0, 1);
+
+  all_units[236] = new Array("gauss", "gauss", "0.0001", 1, 0, -2, -1, 0, 0, 0);
+
+  all_units[237] = new Array("tesla", "tesla", 1, 1, 0, -2, -1, 0, 0, 0);
+
+  all_units[238] = new Array("teslas", "T", 1, 1, 0, -2, -1, 0, 0, 0);
+
+  all_units[239] = new Array("maxwell", "maxwell", "0.00000001", 2, 1, -2, -1, 0, 0, 0);
+
+  all_units[240] = new Array("maxwells", "maxwells", "0.00000001", 2, 1, -2, -1, 0, 0, 0);
+
+  all_units[241] = new Array("wb", "Wb", 1, 2, 1, -2, -1, 0, 0, 0);
+
+  all_units[242] = new Array("weber", "weber", 1, 2, 1, -2, -1, 0, 0, 0);
+
+  all_units[243] = new Array("webers", "webers", 1, 2, 1, -2, -1, 0, 0, 0);
+
+  all_units[244] = new Array("amu", "amu", "1.6605402E-027", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[245] = new Array("atomic-mass-unit", "atomic-mass-unit", "1.6605402E-027", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[246] = new Array("atomic-mass-units", "atomic-mass-units", "1.6605402E-027", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[247] = new Array("u", "u", "1.6605402E-027", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[248] = new Array("ug", "ug", "0.000000001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[249] = new Array("mg", "mg", "0.000001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[250] = new Array("cg", "cg", "0.00001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[251] = new Array("grain", "grain", "0.0000648", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[252] = new Array("grains", "grains", "0.0000648", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[253] = new Array("dg", "dg", "0.0001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[254] = new Array("carat", "carat", "0.0002", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[255] = new Array("carats", "carats", "0.0002", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[256] = new Array("karat", "karat", "0.0002", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[257] = new Array("karats", "karats", "0.0002", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[258] = new Array("j-point", "j-point", "0.0004", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[259] = new Array("gm", "gm", "0.001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[260] = new Array("gram", "gram", "0.001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[261] = new Array("grams", "grams", "0.001", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[262] = new Array("scruple", "scruple", "0.001296", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[263] = new Array("scruples", "scruples", "0.001296", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[264] = new Array("pennyweight", "pennyweight", "0.001555", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[265] = new Array("pennyweights", "pennyweights", "0.001555", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[266] = new Array("dram", "dram", "0.0017718451953125", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[267] = new Array("drams", "drams", "0.0017718451953125", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[268] = new Array("dag", "dag", "0.01", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[269] = new Array("ounce", "ounce", "0.028349523125", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[270] = new Array("ounces", "ounces", "0.028349523125", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[271] = new Array("oz", "oz", "0.028349523125", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[272] = new Array("ounce-troy", "ounce-troy", "0.031103", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[273] = new Array("ounces-troy", "ounces-troy", "0.031103", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[274] = new Array("troy-ounce", "troy-ounce", "0.031103", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[275] = new Array("troy-ounces", "troy-ounces", "0.031103", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[276] = new Array("hg", "hg", "0.1", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[277] = new Array("troy-pound", "troy-pound", "0.373", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[278] = new Array("troy-pounds", "troy-pounds", "0.373", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[279] = new Array("lbm", "lbm", "0.45359237", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[280] = new Array("lbms", "lbms", "0.45359237", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[281] = new Array("pound-mass", "pound-mass", "0.45359237", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[282] = new Array("pounds-mass", "pounds-mass", "0.45359237", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[283] = new Array("kg", "kg", 1, 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[284] = new Array("stone", "stone", "6.35029318", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[285] = new Array("stones", "stones", "6.35029318", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[286] = new Array("slug", "slug", "14.5939029372064", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[287] = new Array("slugs", "slugs", "14.5939029372064", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[288] = new Array("hundredweight", "hundredweight", "45.359237", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[289] = new Array("hundredweights", "hundredweights", "45.359237", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[290] = new Array("short-ton", "short-ton", "907.18474", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[291] = new Array("short-tons", "short-tons", "907.18474", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[292] = new Array("ton", "ton", "907.18474", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[293] = new Array("tons", "tons", "907.18474", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[294] = new Array("metric-ton", "metric-ton", 1000, 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[295] = new Array("metric-tons", "metric-tons", 1000, 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[296] = new Array("tonne", "tonne", 1000, 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[297] = new Array("tonnes", "tonnes", 1000, 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[298] = new Array("long-ton", "long-ton", "1016.0469088", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[299] = new Array("long-tons", "long-tons", "1016.0469088", 0, 1, 0, 0, 0, 0, 0);
+
+  all_units[300] = new Array("h", "h", "6.626196E-034", 2, 1, -3, 0, 0, 0, 0);
+
+  all_units[301] = new Array("W", "W", 1, 2, 1, -3, 0, 0, 0, 0);
+
+  all_units[302] = new Array("Watt", "Watt", 1, 2, 1, -3, 0, 0, 0, 0);
+
+  all_units[303] = new Array("Watts", "Watts", 1, 2, 1, -3, 0, 0, 0, 0);
+
+  all_units[304] = new Array("horsepower", "horsepower", "745.69987158227", 2, 1, -3, 0, 0, 0, 0);
+
+  all_units[305] = new Array("hp", "hp", "745.69987158227", 2, 1, -3, 0, 0, 0, 0);
+
+  all_units[306] = new Array("Pa", "Pa", 1, -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[307] = new Array("Pascal", "Pascal", 1, -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[308] = new Array("torr", "torr", "133.322368421053", -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[309] = new Array("psi", "psi", "6894.75729316836", -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[310] = new Array("bar", "bar", 100000, -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[311] = new Array("bars", "bars", 100000, -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[312] = new Array("atm", "atm", 101325, -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[313] = new Array("atmosphere", "atmosphere", 101325, -1, 1, -2, 0, 0, 0, 0);
+
+  all_units[314] = new Array("abohm", "abohm", "0.000000001", 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[315] = new Array("abohms", "abohms", "0.000000001", 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[316] = new Array("Ohm", "Ohm", 1, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[317] = new Array("Ohms", "Ohms", 1, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[318] = new Array("kilohm", "kilohm", 1000, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[319] = new Array("kilohms", "kilohms", 1000, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[320] = new Array("megohm", "megohm", 1000000, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[321] = new Array("megohms", "megohms", 1000000, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[322] = new Array("statohm", "statohm", 898700000000, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[323] = new Array("statohms", "statohms", 898700000000, 2, 1, -3, -2, 0, 0, 0);
+
+  all_units[324] = new Array("kph", "kph", "0.277777777777778", 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[325] = new Array("fps", "fps", "0.3048", 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[326] = new Array("mph", "mph", "0.44704", 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[327] = new Array("knot", "kn", "0.514444444444444", 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[328] = new Array("knots", "kt", "0.514444444444444", 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[329] = new Array("mps", "mps", 1, 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[330] = new Array("kps", "kps", 1000, 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[331] = new Array("c", "c", 299792458, 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[332] = new Array("speed-of-light", "speed-of-light", 299792458, 1, 0, -1, 0, 0, 0, 0);
+
+  all_units[333] = new Array("mol", "mol", 1, 0, 0, 0, 0, 0, 1, 0);
+
+  all_units[334] = new Array("mole", "mole", 1, 0, 0, 0, 0, 0, 1, 0);
+
+  all_units[335] = new Array("moles", "moles", 1, 0, 0, 0, 0, 0, 1, 0);
+
+  all_units[336] = new Array("degree-rankine", "degree-rankine", "0.555555555555556", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[337] = new Array("degrees-rankine", "degrees-rankine", "0.555555555555556", 0, 0, 0, 0, 0, 0, 0);
+
+  all_units[338] = new Array("degree-kelvin", "degree-kelvin", 1, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[339] = new Array("degree-kelvins", "degree-kelvins", 1, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[340] = new Array("degrees-kelvin", "degrees-kelvin", 1, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[341] = new Array("K", "K", 1, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[342] = new Array("Kelvin", "Kelvin", 1, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[343] = new Array("Kelvins", "Kelvins", 1, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[344] = new Array("ps", "ps", "0.000000000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[345] = new Array("psec", "psec", "0.000000000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[346] = new Array("psecs", "psecs", "0.000000000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[347] = new Array("ns", "ns", "0.000000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[348] = new Array("nsec", "nsec", "0.000000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[349] = new Array("nsecs", "nsecs", "0.000000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[350] = new Array("µs", "µs", "0.000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[351] = new Array("µsec", "µsec", "0.000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[352] = new Array("µsecs", "µsecs", "0.000001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[353] = new Array("ms", "ms", "0.001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[354] = new Array("msec", "msec", "0.001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[355] = new Array("msecs", "msecs", "0.001", 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[356] = new Array("s", "s", 1, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[357] = new Array("sec", "sec", 1, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[358] = new Array("second", "second", 1, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[359] = new Array("seconds", "seconds", 1, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[360] = new Array("secs", "secs", 1, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[361] = new Array("min", "min", 60, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[362] = new Array("mins", "mins", 60, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[363] = new Array("minute", "minute", 60, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[364] = new Array("minutes", "minutes", 60, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[365] = new Array("hour", "hour", 3600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[366] = new Array("hours", "hours", 3600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[367] = new Array("hr", "hr", 3600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[368] = new Array("hrs", "hrs", 3600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[369] = new Array("day", "day", 86400, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[370] = new Array("days", "days", 86400, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[371] = new Array("week", "week", 604800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[372] = new Array("weeks", "weeks", 604800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[373] = new Array("wk", "wk", 604800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[374] = new Array("fortnight", "fortnight", 1209600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[375] = new Array("fortnights", "fortnights", 1209600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[376] = new Array("mon", "mon", 2629800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[377] = new Array("mons", "mons", 2629800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[378] = new Array("month", "month", 2629800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[379] = new Array("months", "months", 2629800, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[380] = new Array("year", "year", 31557600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[381] = new Array("years", "years", 31557600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[382] = new Array("yr", "yr", 31557600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[383] = new Array("yrs", "yrs", 31557600, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[384] = new Array("score", "score", 631152000, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[385] = new Array("scores", "scores", 631152000, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[386] = new Array("centuries", "centuries", 3155760000, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[387] = new Array("century", "century", 3155760000, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[388] = new Array("millenia", "millenia", 31557600000, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[389] = new Array("millenium", "millenium", 31557600000, 0, 0, 1, 0, 0, 0, 0);
+
+  all_units[390] = new Array("foot-pound", "foot-pound", "1.3558179483314", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[391] = new Array("foot-pounds", "foot-pounds", "1.3558179483314", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[392] = new Array("footpound", "footpound", "1.3558179483314", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[393] = new Array("footpounds", "footpounds", "1.3558179483314", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[394] = new Array("ft-lb", "ft-lb", "1.3558179483314", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[395] = new Array("ftlb", "ftlb", "1.3558179483314", 2, 1, -2, 0, 0, 0, 0);
+
+  all_units[396] = new Array("minim", "minim", "0.000000059194", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[397] = new Array("minims", "minims", "0.000000059194", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[398] = new Array("cc", "cc", "0.000001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[399] = new Array("ml", "ml", "0.000001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[400] = new Array("fluidram", "fluidram", "0.0000035516", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[401] = new Array("fluidrams", "fluidrams", "0.0000035516", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[402] = new Array("teaspoon", "teaspoon", "0.00000492892159375", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[403] = new Array("teaspoons", "teaspoons", "0.00000492892159375", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[404] = new Array("tsp", "tsp", "0.00000492892159375", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[405] = new Array("cl", "cl", "0.00001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[406] = new Array("tablespoon", "tablespoon", "0.00001478676478125", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[407] = new Array("tablespoons", "tablespoons", "0.00001478676478125", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[408] = new Array("tbsp", "tbsp", "0.00001478676478125", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[409] = new Array("floz", "floz", "0.0000295735295625", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[410] = new Array("fluid-ounce", "fluid-ounce", "0.0000295735295625", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[411] = new Array("fluid-ounces", "fluid-ounces", "0.0000295735295625", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[412] = new Array("fluidounce", "fluidounce", "0.0000295735295625", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[413] = new Array("fluidounces", "fluidounces", "0.0000295735295625", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[414] = new Array("dl", "dl", "0.0001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[415] = new Array("gill", "gill", "0.00011829411825", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[416] = new Array("gills", "gills", "0.00011829411825", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[417] = new Array("cup", "cup", "0.0002365882365", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[418] = new Array("cups", "cups", "0.0002365882365", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[419] = new Array("pint", "pint", "0.000473176473", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[420] = new Array("pints", "pints", "0.000473176473", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[421] = new Array("pt", "pt", "0.000473176473", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[422] = new Array("fifth", "fifth", "0.0007570823568", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[423] = new Array("fifths", "fifths", "0.0007570823568", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[424] = new Array("qt", "qt", "0.000946352946", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[425] = new Array("quart", "quart", "0.000946352946", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[426] = new Array("quarts", "quarts", "0.000946352946", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[427] = new Array("l", "l", "0.001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[428] = new Array("liter", "liter", "0.001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[429] = new Array("L", "L", "0.001", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[430] = new Array("gal", "gal", "0.003785411784", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[431] = new Array("gallon", "gallon", "0.003785411784", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[432] = new Array("gallons", "gallons", "0.003785411784", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[433] = new Array("peck", "peck", "0.007570823568", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[434] = new Array("pecks", "pecks", "0.007570823568", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[435] = new Array("bushel", "bushel", "0.030283294272", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[436] = new Array("bushels", "bushels", "0.030283294272", 3, 0, 0, 0, 0, 0, 0);
+
+  all_units[437] = new Array("Angstrom", "�...", "1e-10", 1, 0, 0, 0, 0, 0, 0);
+
+  all_units[438] = new Array("Degree Celcius", "°C", 0, 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[439] = new Array("Degree Farenheit", "°F", "1.8", 0, 0, 0, 0, 1, 0, 0);
+
+  all_units[440] = new Array("siemens", "S", 1, -2, -1, 3, 2, 0, 0, 0);
+
+
+
+  function min(a, b) {
+    if (a < b) return (a);
+    else return (b);
+  }
+
+  function max(a, b) {
+    if (a > b) return (a);
+    else return (b);
+  }
+
+
+
+  function analyze(coef, str) //============================ splits units into fundamental SI units
+
+  {
+
+    var pos_dot;
+
+    var pos_slash;
+
+    var pos;
+
+    var unit;
+
+    var exponent;
+
+    var invert_next = 0;
+
+    var list_units_in = new Array;
+
+    var table_base = new Array(coef, 0, 0, 0, 0, 0, 0, 0);
+
+    str = str + ".";
+
+    var i = 0;
+
+    while (str.length > 1) // for every unit in the unit input string
+
+    {
+
+      pos_dot = str.indexOf(".");
+
+      pos_slash = str.indexOf("/");
+
+      if (pos_dot == -1 || pos_slash == -1)
+
+        pos = max(pos_dot, pos_slash);
+
+      else
+
+        pos = min(max(pos_dot, 0), max(pos_slash, 0));
+
+
+
+      list_units_in[i] = str.substring(0, pos);
+
+      str = str.substring(pos + 1, str.length);
+
+
+
+      pos_exp = list_units_in[i].indexOf("^");
+
+      if (pos_exp == -1) // if there is no exponent
+
+      {
+
+        unit = list_units_in[i];
+
+        exponent = 1;
+
+      } else // there is an exponent
+
+      {
+
+        unit = list_units_in[i].substring(0, pos_exp);
+
+        exponent = list_units_in[i].substring(pos_exp + 1, list_units_in[i].length);
+
+      }
+
+
+      // if there is a / after the unit, next exponent is to be inverted
+
+      if (invert_next) exponent = -exponent;
+
+      if (pos == pos_slash) invert_next = 1;
+      else invert_next = 0;
+
+
+      table_base_unit = fetch_unit(unit); // get the SI equivalent of the selected unit
+
+
+
+      if (table_base_unit) // if found in the list
+
+      {
+
+        table_base[0] = table_base[0] * Math.pow(table_base_unit[2], exponent);
+
+        for (j = 1; j < 8; j++) // on incr�mente les exposants des unit�s de base
+
+        {
+
+          table_base[j] = table_base[j] + (exponent * table_base_unit[j + 2]);
+
+        }
+
+      } else return (0); // there is a problem
+
+      i = i + 1;
+
+    }
+
+    return (table_base);
+
+  }
+
+
+
+  function fetch_unit(symbol) //============================ fetches SI equivalents of a unit
+
+  {
+
+    k = 1;
+
+    while (all_units[k])
+
+    {
+
+      if (all_units[k][1] == symbol) return (all_units[k]); // found !
+
+      k = k + 1;
+
+    }
+
+    return (0); // not found
+
+  }
+
+
+
+  function exp_nice(string) //============================ replaces ^2 with ²
+
+  {
+
+    string = string.replace("^2", "²");
+
+    string = string.replace("^2", "²");
+
+    string = string.replace("^2", "²");
+
+    string = string.replace("^2", "²");
+
+    string = string.replace("^3", "³");
+
+    string = string.replace("^3", "³");
+
+    string = string.replace("^3", "³");
+
+    return (string);
+
+  }
+
+
+
+  function exp_clean(string) //============================ replace ² with ^2
+
+  {
+
+    string = string.replace("²", "^2");
+
+    string = string.replace("²", "^2");
+
+    string = string.replace("²", "^2");
+
+    string = string.replace("²", "^2");
+
+    string = string.replace("³", "^3");
+
+    string = string.replace("³", "^3");
+
+    string = string.replace("³", "^3");
+
+    return (string);
+
+  }
+
+
+
+  function display_unit(base_values, base) //============================ Display results
+
+  {
+
+    if (base) // if fundamental SI units are required
+
+    {
+
+      var str_display = "";
+
+      for (p = 1; p < 8; p++) // for m, kg, s, A, K, mol, cd
+
+      {
+
+        if (base_values[p] == 1)
+
+        {
+
+          str_display = "." + all_units[0][p + 2] + str_display;
+
+        }
+
+        if (base_values[p] > 1)
+
+        {
+
+          str_display = "." + all_units[0][p + 2] + "^" + base_values[p] + str_display;
+
+        }
+
+        if (base_values[p] == -1)
+
+        {
+
+          str_display = str_display + "/" + all_units[0][p + 2];
+
+        }
+
+        if (base_values[p] < -1)
+
+        {
+
+          str_display = str_display + "/" + all_units[0][p + 2] + "^" + Math.abs(base_values[p]);
+
+        }
+
+      }
+
+      if (str_display.substring(0, 1) == "/") // if first exponent is negative
+
+        str_display = "1" + str_display
+
+      else
+
+        str_display = str_display.substring(1, str_display.length);
+
+    } else // leave units as is
+
+    {
+
+      str_display = document.forms[0].units_out.value;
+
+    }
+
+    str_display = exp_nice(str_display);
+
+    document.forms[0].units_out.value = str_display;
+
+
+    document.forms[0].quantity_out.value = base_values[0];
+
+  }
+
+
+
+  function convert() //============================ main function
+
+  {
+
+    var units_base_in;
+
+    var units_base_out;
+
+    if (document.forms[0].quantity_in.value == "") document.forms[0].quantity_in.value = 1;
+
+    if (document.forms[0].units_in.value == "") {
+      document.forms[0].units_in.value = "???";
+      exit;
+    }
+
+
+    document.forms[0].units_in.value = exp_clean(document.forms[0].units_in.value);
+
+    document.forms[0].units_out.value = exp_clean(document.forms[0].units_out.value);
+
+
+    units_base_in = analyze(document.forms[0].quantity_in.value, document.forms[0].units_in.value);
+
+
+
+    if (document.forms[0].units_out.value != "") // if specific units are requested for the result
+
+    {
+
+      units_base_out = analyze(1, document.forms[0].units_out.value);
+
+      if (units_base_out) // if the units are found in the database
+
+      {
+
+        if (units_base_out[1] != units_base_in[1]
+
+          || units_base_out[2] != units_base_in[2]
+
+          || units_base_out[3] != units_base_in[3]
+
+          || units_base_out[4] != units_base_in[4]
+
+          || units_base_out[5] != units_base_in[5]
+
+          || units_base_out[6] != units_base_in[6]
+
+          || units_base_out[7] != units_base_in[7]) // if units are not compatible
+
+          display_unit(units_base_in, 1);
+
+        else // all is OK
+
+        {
+
+          units_base_in[0] = units_base_in[0] / units_base_out[0];
+
+          display_unit(units_base_in, 0);
+
+        }
+
+      } else // unit not found
+
+        display_unit(units_base_in, 1);
+
+    } else // no specific units requested
+
+      display_unit(units_base_in, 1);
+
+  }
+
+
+
+  function init_form() //============================ Initialization of the form
+
+  {
+
+    document.forms[0].quantity_in.value = "";
+
+    document.forms[0].units_in.value = "mph";
+
+    document.forms[0].quantity_out.value = "";
+
+    document.forms[0].units_out.value = "";
+
+  }
+
+
+
+  function list_units() //============================ Displays a clickable list of units available
+
+  {
+
+    var n = 1;
+
+    var list = new Array;
+
+    while (all_units[n])
+
+    {
+
+      list[n - 1] = all_units[n][1];
+
+      n = n + 1;
+
+    }
+
+    list.sort();
+
+    n = 0;
+
+    while (list[n])
+
+    {
+
+      document.write("<a href='#' onClick='Javascript:document.forms[0].units_in.value=document.forms[0].units_in.value+\".\"+\"");
+
+      document.write(list[n]);
+
+      document.write("\"'>");
+
+      document.write(list[n]);
+
+      document.write("</a>, ");
+
+      n = n + 1;
+
+    }
+
+  }
+
+
+
+  //============================ End of scripts
+</script>
+
+
+
+<html>
+
+<head>
+  <title>Universal Converter</title>
+</head>
+
+<body>
+
+
+
+  <style>
+    td {
+      font-family: Arial;
+      font-size: 10px;
+      text-align: center;
+    }
+
+    .red {
+      color: #ff0000;
+    }
+  </style>
+
+
+
+  <h1>Universal Converter</h1>
+
+  <hr />
+
+
+
+  <form>
+
+    <table align='center' border='1'>
+
+      <tr>
+
+        <td>
+
+          <input type='text' size='10' name='quantity_in' align='right'>
+
+        </td>
+        <td>
+
+          <input type='text' size='15' name='units_in'>
+
+        </td>
+        <td>
+
+          <input type='button' value='convert =>' onClick='Javascript:convert();'>
+
+        </td>
+        <td>
+
+          <input type='text' size='20' name='quantity_out' align='right' bgcolor="#aaaaaa">
+
+        </td>
+        <td>
+
+          <input type='text' size='15' name='units_out'>
+
+        </td>
+
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>mph</td>
+        <td rowspan='9'>Examples
+          <br>
+          <br>fields in black
+          <br>are filled by user
+          <br>fields in red
+          <br>are the results </td>
+        <td class='red'>0.44704</td>
+        <td class='red'>m/s</td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>mi/hr</td>
+        <td class='red'>0.44704</td>
+        <td class='red'>m/s</td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>mi.hr^-1</td>
+        <td class='red'>0.44704</td>
+        <td class='red'>m/s</td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>mph</td>
+        <td class='red'>1.609344</td>
+        <td>km/hr</td>
+      </tr>
+
+      <tr>
+        <td>9</td>
+        <td>kilo.m/hr</td>
+        <td class='red'>250</td>
+        <td>centi.m/s</td>
+      </tr>
+
+      <tr>
+        <td>1.2345e+8</td>
+        <td>mph</td>
+        <td class='red'>55187088</td>
+        <td class='red'>m/s</td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>mph</td>
+        <td class='red'>1.4911649311738188e-9</td>
+        <td>c</td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>cm.kg/min^2/µA^2</td>
+        <td class='red'>2777.77777777777</td>
+        <td>H/mm</td>
+      </tr>
+
+      <tr>
+        <td>1</td>
+        <td>cm.kg/min^2/µA^2</td>
+        <td class='red'>2777777.77777777</td>
+        <td class='red'>m.kg/s²/A²</td>
+      </tr>
+
+    </table>
+
+  </form>
+
+
+
+  <hr />
+
+  <b>Help: </b>Units must be separated by dots (.) or slashes (/). Space is NOT a separator. Exponents may be used with the symbol ^ and can be positive or negative. Exponents ² and ³ are allowed. If destination units are not supplied or incompatible
+  with source units, the values will be converted into base S.I. units. Units are case-sensitive. Values can be supplied in scientific format.
+
+  <hr />
+
+
+
+  <script language='Javascript'>
+    init_form();
+
+    list_units();
+  </script>
+
+
+
+  <hr />
+
+
+
+  <b>About the Universal converter:</b> This Javascript converter is provided as a standalone file that can be used online or offline. It can be copied and distributed freely, if only this mention is kept visible. Bugs, encouragement and new units can
+  be sent to <a href='mailto:bocquet@bigfoot.com'>bocquet@bigfoot.com</a> (see the code source for the possibility to declare new units).
+
+
+
+  </font>
+</body>
+
+</html>

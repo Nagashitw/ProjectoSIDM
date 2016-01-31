@@ -1,165 +1,198 @@
 <!DOCTYPE html>
+
 <head>
   <title>Calculadora Simples</title>
-<!-- Include meta tag to ensure proper rendering and touch zooming -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<!-- Include jQuery Mobile stylesheets -->
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <!-- Include meta tag to ensure proper rendering and touch zooming -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <!-- Include jQuery Mobile stylesheets -->
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
 
-<!-- Include the jQuery library -->
-<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <!-- Include the jQuery library -->
+  <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-<!-- Include the jQuery Mobile library -->
-<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <!-- Include the jQuery Mobile library -->
+  <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
-<!-- Include no JQuery Mobile FlatUI-->
-<link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
+  <!-- Include no JQuery Mobile FlatUI-->
+  <link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
 
-<!-- Include do Script para as Dropdowns-->
-<script src="scripts/jquery.ddslick.js"></script>
-<script src="scripts/jquery.ddslick.min.js"></script>
+  <!-- Include do Script para as Dropdowns-->
+  <script src="scripts/jquery.ddslick.js"></script>
+  <script src="scripts/jquery.ddslick.min.js"></script>
 
-<!-- Include de Funcoes Javascript do Trabalho-->
-<script src="scripts/funcoes.js"></script>
+  <!-- Include de Funcoes Javascript do Trabalho-->
+  <script src="scripts/funcoes.js"></script>
 
-<!-- Stylesheet do Trabalho-->
-<link rel="stylesheet" type="text/css" href="css/style.css">
+  <!-- Stylesheet do Trabalho-->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
-<!-- Fontawesome CDN -->
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg==" crossorigin="anonymous">
+  <!-- Fontawesome CDN -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
+  crossorigin="anonymous">
 
 </head>
+
 <body>
-<!-- Página Referente ao Menu Inicial -->
+  <!-- Página Referente ao Menu Inicial -->
   <div data-role="page" id="MenuInicial">
-  <div data-role="header" data-position="fixed">
-  <a href="javascript:navigator.app.exitApp()" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-  <a href="#Opcoes" data-icon="gear" class="ui-btn-right">Opções</a>
-	 <h1>Cáculos Rápidos</h1>
+    <div data-role="header" data-position="fixed">
+      <a href="javascript:navigator.app.exitApp()" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="#Opcoes" data-icon="gear" class="ui-btn-right">Opções</a>
+      <h1>Cáculos Rápidos</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+      <!-- Main do Menu Inicial -->
+      <!-- <img src="images/convertermoeda128.png" alt="conversor de moedas"></img> -->
+      <a href="#ConversorMoedas">Ir para Conversor Moedas</a>
+      <br>
+      <a href="#ConversorMedidas">Conversor Medidas</a>
+    </div>
+    <!--Fim da Div do Main da Pagina inicial -->
+
+    <div data-role="footer">
+      <!-- Footer do Menu Inicial -->
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
   </div>
-
-  <div data-role="main" class="ui-content"> <!-- Main do Menu Inicial -->
-	 <!-- <img src="images/convertermoeda128.png" alt="conversor de moedas"></img> -->
-	 	<a href="#ConversorMoedas">Ir para Conversor Moedas</a><br>
-    <a href="#ConversorMedidas">Conversor Medidas</a>
-	</div><!--Fim da Div do Main da Pagina inicial -->
-
-	 <div data-role="footer"> <!-- Footer do Menu Inicial -->
-		<h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-	 </div>
-</div><!-- Fim do Menu Inicial-->
+  <!-- Fim do Menu Inicial-->
 
 
-<!-- Página Referente ao Menu do Conversor de Moedas  -->
-<div data-role="page"  id="ConversorMoedas">
-  <div data-role="header" data-position="fixed">
-	 <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-	 <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-	 <h1>Conversor de Moedas</h1>
+  <!-- Página Referente ao Menu do Conversor de Moedas  -->
+  <div data-role="page" id="ConversorMoedas">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Conversor de Moedas</h1>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+
+      Introduza o valor
+      <br>
+      <input type="text" name="valor">
+      <br>
+      <div id="Moeda"></div>
+
+
+    </div>
+    <!--Fim da Div do Main da Pagina do Conversor de Moedas -->
+
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+
   </div>
+  <!--Fim da Pagina do Convesor de Moedas -->
+
+  <!-- Página Referente ao Menu do Conversor de Medidas  -->
+  <div data-role="page" id="ConversorMedidas">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Conversor de Medidas</h1>
+    </div>
 
 
-<div data-role="main" class="ui-content">
+    <div data-role="main" class="ui-content">
 
-  Introduza o valor<br>
-  <input type="text" name="valor"><br>
-	 <div id="Moeda"></div>
+      <a href="#ConversorPeso">Converter Peso</a>
+      <br />
+      <a href="#ConversorAltura">Conversor Altura</a>
+      <br />
+      <a href="#ConversorArmazenamento">Conversor Armazenamento</a>
+      <br />
 
+    </div>
+    <!--Fim da Div do Main da Pagina do Conversor de Medidas -->
 
-</div><!--Fim da Div do Main da Pagina do Conversor de Moedas -->
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
 
-<div data-role="footer">
-  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-</div>
-
-</div><!--Fim da Pagina do Convesor de Moedas -->
-
-<!-- Página Referente ao Menu do Conversor de Medidas  -->
-<div data-role="page"  id="ConversorMedidas">
-  <div data-role="header" data-position="fixed">
-	 <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-	 <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-	 <h1>Conversor de Medidas</h1>
   </div>
+  <!--Fim da Pagina do Convesor de Medidas -->
+
+  <!-- Conversor de Peso  -->
+  <div data-role="page" id="ConversorPeso">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Conversor de Peso</h1>
+    </div>
 
 
-<div data-role="main" class="ui-content">
+    <div data-role="main" class="ui-content">
+      <div>
+        <label name="Escolha a Unidade de Medida">Escolha a sua unidade de medida</label>
+        <select name="Select Unidade de Peso" id="select_unidade_peso" data-mini="true" onchange="conv_peso()">
+          <option value="tonelada">Tonelada</option>
+          <option value="kg">Quiograma</option>
+          <option value="grama">Grama</option>
+          <option value="libras">Libras</option>
+          <option value="stone">Stone</option>
+          <option value="arroba">Arroba</option>
+        </select>
 
-  <a href="#ConversorPeso">Converter Peso</a><br />
-  <a href="#ConversorAltura">Conversor Altura</a><br />
-  <a href="#ConversorArmazenamento">Conversor Armazenamento</a><br />
 
-</div><!--Fim da Div do Main da Pagina do Conversor de Medidas -->
+        <input id="valorpeso" onkeyup="conv_peso()" type="number" data-mini="true" name="valor" min="0" max="999999999">
+        <div id="tabela_peso" anchor="right"><br />
+          <table data-role="table" data-mode="reflow" class="ui-responsive table-stripe">
+            <thead>
+              <tr>
+            <!--    <th>Unidade</th>
+                <th>Valor</th> </-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tonelada</td>
+                <td id="td_tonelada"></td>
 
-<div data-role="footer">
-  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-</div>
+              </tr>
+              <tr>
+                <td>Quilograma</td>
+                <td id="td_quilograma"></td>
 
-</div><!--Fim da Pagina do Convesor de Medidas -->
+              </tr>
+              <tr>
+                <td>Grama</td>
+                <td id="td_grama"></td>
 
-<!-- Conversor de Peso  -->
-<div data-role="page"  id="ConversorPeso">
-  <div data-role="header" data-position="fixed">
-	 <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-	 <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-	 <h1>Conversor de Peso</h1>
+              </tr>
+              <tr>
+                <td>Arroba</td>
+                <td id="td_arroba"></td>
+              </tr>
+              <tr>
+                <td>Stone</td>
+                <td id="td_stone"></td>
+
+              </tr>
+              <tr>
+                <td>Libra</td>
+                <td id="td_libra"></td>
+
+              </tr>
+              <tr>
+                <td>Onça</td>
+                <td id="td_oz"></td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+
   </div>
-
-
-<div data-role="main" class="ui-content">
-<div>
-<h3 >De:</h3>
-    <select name="select-choice-0" id="select-choice-min" data-mini="true">
-     <label for="select-choice-1" class="select">De:</label>
-     <option value="kg">Kg</option>
-     <option value="pnd">Libras</option>
-     <option value="tonelada">Tonelada</option>
-     <option value="arroba">Arroba</option>
-   </select>
-
-<input type="number" data-mini="true" name="valor" min="1" max="999999999">
-<h3>Para:</h3>
-<label id="resultadopeso" title="resultadopeso">Futebol</label>
-</div>
-
-</div>
-
-<div data-role="footer">
-  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-</div>
-
-</div><!--Fim da Pagina do Convesor de Velocidade -->
-
-<!-- Conversor de Peso  -->
-<div data-role="page"  id="ConversorVelocidade">
-  <div data-role="header" data-position="fixed">
-	 <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-	 <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-	 <h1>Conversor de Peso</h1>
-  </div>
-
-
-<div data-role="main" class="ui-content">
-<div class="center-wrapper">
-<h3 >De:</h3>
-    <select name="select-choice-0" id="select-choice-min" data-mini="true">
-     <label for="select-choice-1" class="select">De:</label>
-     <option value="kph">Kilometros por Hora</option>
-     <option value="mph">Milhas por Hora</option>
-   </select>
-
-<input type="number" data-mini="true" name="valor" min="1" max="999999999">
-<h3>Para:</h3>
-<label id="resultadopeso" title="resultadovelocidade">Futebol</label>
-</div>
-
-</div>
-
-<div data-role="footer">
-  <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-</div>
-
-</div><!--Fim da Pagina do Convesor de Velocidade -->
+  <!--Fim da Pagina do Convesor de Velocidade -->
 
 </body>
