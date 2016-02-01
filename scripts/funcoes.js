@@ -4,6 +4,8 @@ function exitFromApp() {
   navigator.app.exitApp();
 }
 
+// Funcao para arrendondar um valor com N casas decimais.
+
 function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
@@ -123,9 +125,7 @@ function conv_peso() {
     var libra_to_oz = round((valor * 16), 3);
     var setLabel = document.getElementById("td_oz").innerHTML = libra_to_oz;
 
-  }
-
-  else if (peso1 == "stone") {
+  } else if (peso1 == "stone") {
 
     var stone_to_tonelada = round((valor * 0.00635029318), 3);
     var setLabel = document.getElementById("td_tonelada").innerHTML = stone_to_tonelada;
@@ -139,7 +139,7 @@ function conv_peso() {
     var setLabel = document.getElementById("td_grama").innerHTML = stone_to_grama;
 
     var stone_to_libra = round((valor * 14), 3);
-    var setLabel = document.getElementById("td_stone").innerHTML = stone_to_libra;
+    var setLabel = document.getElementById("td_libra").innerHTML = stone_to_libra;
 
     var stone_to_arroba = round((valor * 0.43228680599), 3);
     var setLabel = document.getElementById("td_arroba").innerHTML = stone_to_arroba;
@@ -147,6 +147,118 @@ function conv_peso() {
     var stone_to_oz = round((valor * 224), 3);
     var setLabel = document.getElementById("td_oz").innerHTML = stone_to_oz;
 
-  }
+  } else if (peso1 == "arroba") {
 
+    var arroba_to_tonelada = round((valor * 0.0185210868058), 3);
+    var setLabel = document.getElementById("td_tonelada").innerHTML = arroba_to_tonelada;
+
+    var arroba_to_kg = round((valor * 14.69), 3);
+    var setLabel = document.getElementById("td_quilograma").innerHTML = arroba_to_kg;
+
+    var setLabel = document.getElementById("td_arroba").innerHTML = "-";
+
+    var arroba_to_grama = round((valor * 14690), 3);
+    var setLabel = document.getElementById("td_grama").innerHTML = arroba_to_grama;
+
+    var arroba_to_libra = round((valor * 32.385906315), 3);
+    var setLabel = document.getElementById("td_libra").innerHTML = arroba_to_libra;
+
+    var arroba_to_stone = round((valor * 2.3132790225), 3);
+    var setLabel = document.getElementById("td_stone").innerHTML = arroba_to_stone;
+
+    var arroba_to_oz = round((valor * 518.174501039), 3);
+    var setLabel = document.getElementById("td_oz").innerHTML = arroba_to_oz;
+
+  } else if (peso1 == "oz") {
+    var oz_to_tonelada = round((valor * 0.000028349523125), 3);
+    var setLabel = document.getElementById("td_tonelada").innerHTML = oz_to_tonelada;
+
+    var oz_to_kg = round((valor * 0.028349523125), 3);
+    var setLabel = document.getElementById("td_quilograma").innerHTML = oz_to_kg;
+
+    var setLabel = document.getElementById("td_oz").innerHTML = "-";
+
+    var oz_to_grama = round((valor * 28.349523125), 3);
+    var setLabel = document.getElementById("td_grama").innerHTML = oz_to_grama;
+
+    var oz_to_libra = round((valor * 0.0625), 3);
+    var setLabel = document.getElementById("td_libra").innerHTML = oz_to_libra;
+
+    var oz_to_stone = round((valor * 0.004464285714285714), 3);
+    var setLabel = document.getElementById("td_stone").innerHTML = oz_to_stone;
+
+    var oz_to_arroba = round((valor * 0.00192985181246), 3);
+    var setLabel = document.getElementById("td_arroba").innerHTML = oz_to_arroba;
+  } else {
+
+    Alert("Por favor seleccione uma unidade de conversão!")
+  }
+}
+// FIM DO CONVERSOR DE PESO
+
+function conv_comprimento() {
+  //Ir buscar os ids das unidades a converter;
+  var unidade_comprimento = document.getElementById("select_unidade_comprimento").value;
+  //var peso2 =  document.getElementById("selectpeso2").value;
+  var valor = document.getElementById("valorcomprimento").value;
+
+  if (unidade_comprimento == "km") {
+    var setLabel = document.getElementById("td_km").innerHTML = "-";
+
+    var km_to_m = round((valor * 1000), 3);
+    var setLabel = document.getElementById("td_m").innerHTML = km_to_m;
+
+    var km_to_cm = round((valor * 100000), 3);
+    var setLabel = document.getElementById("td_cm").innerHTML = km_to_cm;
+
+    var km_to_mm = round((valor * 1000000), 3);
+    var setLabel = document.getElementById("td_mm").innerHTML = km_to_mm;
+
+    var km_to_legua = round((valor * 0.23809523809523808), 3);
+    var setLabel = document.getElementById("td_legua").innerHTML = km_to_legua;
+
+    var km_to_milha = round((valor * 0.621371192237), 3);
+    var setLabel = document.getElementById("td_milha").innerHTML = km_to_milha;
+
+    var km_to_jarda = round((valor * 1093.61329834), 3);
+    var setLabel = document.getElementById("td_jarda").innerHTML = km_to_jarda;
+
+    var km_to_pe = round((valor * 3280.83989501), 3);
+    var setLabel = document.getElementById("td_pe").innerHTML = km_to_pe;
+
+    var km_to_polegada = round((valor * 39370.07874015748), 3);
+    var setLabel = document.getElementById("td_polegada").innerHTML = km_to_polegada;
+
+  } else if (unidade_comprimento == "m")
+
+  {
+    var setLabel = document.getElementById("td_m").innerHTML = "-";
+
+    var m_to_km = round((valor * 0.001), 3);
+    var setLabel = document.getElementById("td_km").innerHTML = m_to_km;
+
+    var m_to_cm = round((valor * 100), 3);
+    var setLabel = document.getElementById("td_cm").innerHTML = m_to_cm;
+
+    var m_to_mm = round((valor * 1000), 3);
+    var setLabel = document.getElementById("td_mm").innerHTML = m_to_mm;
+
+    var m_to_legua = round((valor * 0.0002380952380952381), 3);
+    var setLabel = document.getElementById("td_legua").innerHTML = m_to_legua;
+
+    var m_to_milha = round((valor * 0.000621371192237), 3);
+    var setLabel = document.getElementById("td_milha").innerHTML = m_to_milha;
+
+    var m_to_jarda = round((valor * 1.0936132983377078), 3);
+    var setLabel = document.getElementById("td_jarda").innerHTML = m_to_jarda;
+
+    var m_to_pe = round((valor * 3.280839895013123), 3);
+    var setLabel = document.getElementById("td_pe").innerHTML = m_to_pe;
+
+    var m_to_polegada = round((valor * 39.37007874015748), 3);
+    var setLabel = document.getElementById("td_polegada").innerHTML = m_to_polegada;
+    
+  } else if (unidade_comprimento == "cm") {
+
+  }
 }

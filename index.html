@@ -100,7 +100,7 @@
 
       <a href="#ConversorPeso">Converter Peso</a>
       <br />
-      <a href="#ConversorAltura">Conversor Altura</a>
+      <a href="#ConversorComprimento">Conversor Comprimento</a>
       <br />
       <a href="#ConversorArmazenamento">Conversor Armazenamento</a>
       <br />
@@ -120,7 +120,7 @@
     <div data-role="header" data-position="fixed">
       <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
       <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-      <h1>Conversor de Peso</h1>
+      <h1>Conversor - Unidades de Massa</h1>
     </div>
 
 
@@ -131,18 +131,20 @@
           <option value="tonelada">Tonelada</option>
           <option value="kg">Quiograma</option>
           <option value="grama">Grama</option>
-          <option value="libras">Libras</option>
-          <option value="stone">Stone</option>
           <option value="arroba">Arroba</option>
+          <option value="stone">Stone</option>
+          <option value="libra">Libras</option>
+          <option value="oz">Onças</option>
         </select>
 
 
         <input id="valorpeso" onkeyup="conv_peso()" type="number" data-mini="true" name="valor" min="0" max="999999999">
-        <div id="tabela_peso" anchor="right"><br />
+        <div id="tabela_peso" anchor="right">
+          <br />
           <table data-role="table" data-mode="reflow" class="ui-responsive table-stripe">
             <thead>
               <tr>
-            <!--    <th>Unidade</th>
+                <!--    <th>Unidade</th>
                 <th>Valor</th> </-->
               </tr>
             </thead>
@@ -193,6 +195,100 @@
     </div>
 
   </div>
-  <!--Fim da Pagina do Convesor de Velocidade -->
+  <!--Fim da Pagina do Convesor de Peso -->
 
+  <!-- Conversor de Comprimento  -->
+  <div data-role="page" id="ConversorComprimento">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Conversor - Unidades de Comprimento</h1>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div>
+        <label name="Escolha a Unidade de Medida">Escolha a sua unidade de medida</label>
+        <select name="Select Unidade de Comprimento" id="select_unidade_comprimento" data-mini="true" onchange="conv_comprimento()">
+          <option value="km">Quilómetro</option>
+          <option value="m">Metro</option>
+          <option value="cm">Centímetro</option>
+          <option value="mm">Milímetro</option>
+          <option value="legua">Legua</option>
+          <option value="milha">Milha</option>
+          <option value="jarda">Jarda</option>
+          <option value="pe">Pé</option>
+          <option value="polegada">Polegada</option>
+        </select>
+
+
+        <input id="valorcomprimento" onkeyup="conv_comprimento()" type="number" data-mini="true" name="valor" min="0" max="999999999">
+        <div id="tabela_comprimento" anchor="right">
+          <br />
+          <table data-role="table" data-mode="reflow" class="ui-responsive table-stripe">
+            <thead>
+              <tr>
+                <!--    <th>Unidade</th>
+                <th>Valor</th> </-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Km</td>
+                <td id="td_km"></td>
+
+              </tr>
+              <tr>
+                <td>Metros</td>
+                <td id="td_m"></td>
+
+              </tr>
+              <tr>
+                <td>Centímetros</td>
+                <td id="td_cm"></td>
+
+              </tr>
+              <tr>
+                <td>Milímetros</td>
+                <td id="td_mm"></td>
+              </tr>
+              <tr>
+                <td>Léguas</td>
+                <td id="td_legua"></td>
+
+                <tr>
+                  <td>Milhas</td>
+                  <td id="td_milha"></td>
+
+                </tr>
+              </tr>
+              <tr>
+                <td>Jardas</td>
+                <td id="td_jarda"></td>
+
+              </tr>
+              <tr>
+                <td>Pés</td>
+                <td id="td_pe"></td>
+
+              </tr>
+              <tr>
+                <td>Polegadas</td>
+                <td id="td_polegada"></td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+
+  </div>
+  <!--Fim da Pagina do Convesor de Velocidade -->
 </body>
