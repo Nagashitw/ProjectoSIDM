@@ -102,7 +102,11 @@
       <br />
       <a href="#ConversorComprimento">Conversor Comprimento</a>
       <br />
+      <a href="#ConversorVelocidade">Conversor Velocidade</a>
+      <br />
       <a href="#ConversorArmazenamento">Conversor Armazenamento</a>
+      <br />
+      <a href="#FormulaResolvente">Formula Resolvente</a>
       <br />
 
     </div>
@@ -290,5 +294,195 @@
     </div>
 
   </div>
-  <!--Fim da Pagina do Convesor de Velocidade -->
+  <!--Fim da Pagina do Convesor de Comprimento -->
+
+  <!-- Conversor de Velocidade  -->
+  <div data-role="page" id="ConversorVelocidade">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Conversor - Unidades de Velocidade</h1>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div>
+        <label name="Escolha a Unidade de Medida">Escolha a sua unidade de medida</label>
+        <select name="Select Unidade de velocidade" id="select_unidade_velocidade" data-mini="true" onchange="conv_velocidade()">
+          <option value="kmh">Km/h</option>
+          <option value="mph">Mph</option>
+          <option value="mps">m/s</option>
+        </select>
+
+
+        <input id="valorvelocidade" onkeyup="conv_velocidade()" type="number" data-mini="true" name="valor" min="0" max="999999999">
+        <div id="tabela_velocidade" anchor="right">
+          <br />
+          <table data-role="table" class="ui-responsive table-stripe">
+            <thead>
+              <tr>
+                <!--    <th>Unidade</th>
+                <th>Valor</th> </-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Km/h</td>
+                <td id="td_kmh"></td>
+
+              </tr>
+              <tr>
+                <td>Mph</td>
+                <td id="td_mph"></td>
+
+              </tr>
+              <tr>
+                <td>m/s</td>
+                <td id="td_mps"></td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+
+  </div>
+
+  <!-- Conversor de Armazenamento  -->
+  <div data-role="page" id="ConversorArmazenamento">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Conversor - Unidades de Armazenamento</h1>
+    </div>
+
+
+    <div data-role="main" class="ui-content">
+      <div>
+        <label name="Escolha a Unidade de Medida">Escolha a sua unidade de medida</label>
+        <select name="Select Unidade de Armazenamento" id="select_unidade_armazenamento" data-mini="true" onchange="conv_armazenamento()">
+          <option value="bit">Bit</option>
+          <option value="kilobit">Kilobit</option>
+          <option value="megabit">Megabit</option>
+          <option value="gigabit">Gigabit</option>
+          <option value="byte">byte</option>
+          <option value="kilobyte">Kilobyte</option>
+          <option value="megabyte">Megabyte</option>
+          <option value="gigabyte">Gigabyte</option>
+        </select>
+
+
+        <input id="valorarmazenamento" onkeyup="conv_armazenamento()" type="number" data-mini="true" name="valor" min="0" max="999999999">
+        <div id="tabela_armazenamento" anchor="right">
+          <br />
+          <table data-role="table" class="ui-responsive table-stripe">
+            <thead>
+              <tr>
+                <!--    <th>Unidade</th>
+                <th>Valor</th> </-->
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>bit</td>
+                <td id="td_bit"></td>
+
+              </tr>
+              <tr>
+                <td>kilobit</td>
+                <td id="td_kilobit"></td>
+
+              </tr>
+              <tr>
+                <td>megabit</td>
+                <td id="td_megabit"></td>
+
+              </tr>
+              <tr>
+                <td>gigabit</td>
+                <td id="td_gigabit"></td>
+
+              </tr>
+              <tr>
+                <td>byte</td>
+                <td id="td_byte"></td>
+
+              </tr>
+              <tr>
+                <td>kilobyte</td>
+                <td id="td_kilobyte"></td>
+
+              </tr>
+              <tr>
+                <td>megabyte</td>
+                <td id="td_megabyte"></td>
+
+              </tr>
+              <tr>
+                <td>gigabyte</td>
+                <td id="td_gigabyte"></td>
+
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+
+    <div data-role="footer">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+
+
+
+
+
+  </div>
+
+
+  <div data-role="page" id="FormulaResolvente">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Fórmula Resolvente</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+
+
+      <b>Fórmula Resolvente</b>
+      <form name="quadCalc">
+
+        Uma equação quadrática é uma curva da família das parábolas
+        <br /> As equações quadráticas têm o formato: ax<sup>2</sup>+bx+c=0.
+        <br />
+        <br />
+        <input type="text" maxlength="8" name="valA" value="8" size="4">x<sup>2</sup>+
+        <input type="text" maxlength="8" name="valB" value="10" size="4">x+
+        <input type="text" maxlength="8" name="valC" value="2" size="4">=0
+        <br />
+        <input type="button" onClick=quadData1() value="Calcular">
+        <input type="reset" value="Reset">
+        <br />
+        <input type="text" name="answer1" readonly="readonly" size="60">
+        <br /> A área limitada pela curva acima do eixo x é:
+        <input type="text" name="answer2" readonly="readonly" size="6" />
+        <br /> O gradiente da curva em qualquer ponto é:
+        <input type="text" name="answer3" size="10"> O valor
+        <input type="text" name="answer4" readonly="readonly" size="8"> da curva ocorre nas coordenadas:
+        <input type="text" name="answer5" readonly="readonly" size="10">.
+      </form>
+
+      <div data-role="footer">
+        <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+      </div>
 </body>
