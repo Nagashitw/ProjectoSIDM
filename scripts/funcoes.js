@@ -490,6 +490,207 @@ function conv_velocidade() {
   }
 }
 
+// CONVERSOR ARMAZENAMENTO
+
+function conv_armazenamento() {
+  //Ir buscar os ids das unidades a converter;
+  var unidade_armazenanento = document.getElementById("select_unidade_armazenamento").value;
+  var valor = document.getElementById("valorbitsbytes").value;
+
+  if (unidade_armazenanento == "bit") {
+    var setLabel = document.getElementById("td_bit").innerHTML = "-";
+
+    var bit_to_kilobit = round((valor * 0.0009765625), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = bit_to_kilobit;
+
+    var bit_to_megabit = round((valor * 0.000001), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = bit_to_megabit;
+
+    var bit_to_gigabit = round((valor * 0.00000000093132257461548), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = bit_to_gigabit;
+
+    var bit_to_byte = round((valor * 0.125), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = bit_to_byte;
+
+    var bit_to_kilobyte = round((valor * 0.000125), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = bit_to_kilobyte;
+
+    var bit_to_megabyte = round((valor * 0.00000001920928955078125), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = bit_to_megabyte;
+
+    var bit_to_gigabyte = round((valor * 0.000000000116415321826935), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = bit_to_gigabyte;
+
+  } else if (unidade_armazenanento == "kilobit") {
+    var setLabel = document.getElementById("td_kilobit").innerHTML = "-";
+
+    var kilobit_to_bit = round((valor * 1024), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = kilobit_to_bit;
+
+    var kilobit_to_megabit = round((valor * 0.0009765625), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = kilobit_to_megabit;
+
+    var kilobit_to_gigabit = round((valor * 0.00000095367431640625), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = kilobit_to_gigabit;
+
+    var kilobit_to_byte = round((valor * 128), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = kilobit_to_byte;
+
+    var kilobit_to_kilobyte = round((valor * 0.125), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = kilobit_to_kilobyte;
+
+    var kilobit_to_megabyte = round((valor * (0.0001220703125)), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = kilobit_to_megabyte;
+
+    var kilobit_to_gigabyte = round((valor * 0.000000119209289550781), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = kilobit_to_gigabyte;
+
+  } else if (unidade_armazenanento == "megabit") {
+    var setLabel = document.getElementById("td_megabit").innerHTML = "-";
+
+    var megabit_to_bit = round((valor * 1048576), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = megabit_to_bit;
+
+    var megabit_to_kilobit = round((valor * 1024), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = megabit_to_kilobit;
+
+    var megabit_to_gigabit = round((valor * 0.0009765625), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = megabit_to_gigabit;
+
+    var megabit_to_byte = round((valor * 131072), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = megabit_to_byte;
+
+    var megabit_to_kilobyte = round((valor * 128), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = megabit_to_kilobyte;
+
+    var megabit_to_megabyte = round((valor * 0.125), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = megabit_to_megabyte;
+
+    var megabit_to_gigabyte = round((valor * (0.0001220703125)), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = megabit_to_gigabyte;
+
+  } else if (unidade_armazenanento == "gigabit") {
+    var setLabel = document.getElementById("td_gigabit").innerHTML = "-";
+
+    var gigabit_to_bit = round((valor * 1073741824), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = gigabit_to_bit;
+
+    var gigabit_to_kilobit = round((valor * 1048576), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = gigabit_to_kilobit;
+
+    var gigabit_to_megabit = round((valor * 1024), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = gigabit_to_megabit;
+
+    var gigabit_to_byte = round((valor * 134217728), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = gigabit_to_byte;
+
+    var gigabit_to_kilobyte = round((valor * 131072), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = gigabit_to_kilobyte;
+
+    var gigabit_to_megabyte = round((valor * 128), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = gigabit_to_megabyte;
+
+    var gigabit_to_gigabyte = round((valor * 0.125), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = gigabit_to_gigabyte;
+
+  } else if (unidade_armazenanento == "byte") {
+    var setLabel = document.getElementById("td_byte").innerHTML = "-";
+
+    var byte_to_bit = round((valor * 8), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = byte_to_bit;
+
+    var byte_to_kilobit = round((valor * 0.0078125), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = byte_to_kilobit;
+
+    var byte_to_megabit = round((valor * 0.00000762939453125), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = byte_to_megabit;
+
+    var byte_to_gigabit = round((valor * 0.00000000745058059692383), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = byte_to_gigabit;
+
+    var byte_to_kilobyte = round((valor * 0.0009765625), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = byte_to_kilobyte;
+
+    var byte_to_megabyte = round((valor * 0.00000095367431640625), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = byte_to_megabyte;
+
+    var byte_to_gigabyte = round((valor * 0.000000000931322574615479), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = byte_to_gigabyte;
+
+  } else if (unidade_armazenanento == "kilobyte") {
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = "-";
+
+    var kilobyte_to_bit = round((valor * 8192), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = kilobyte_to_bit;
+
+    var kilobyte_to_kilobit = round((valor * 8), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = kilobyte_to_kilobit;
+
+    var kilobyte_to_megabit = round((valor * 0.0078125), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = kilobyte_to_megabit;
+
+    var kilobyte_to_gigabit = round((valor * 0.00000762939453125), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = kilobyte_to_gigabit;
+
+    var kilobyte_to_byte = round((valor * 1024), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = kilobyte_to_byte;
+
+    var kilobyte_to_megabyte = round((valor * 0.0009765625), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = kilobyte_to_megabyte;
+
+    var kilobyte_to_gigabyte = round((valor * 0.00000095367431640625), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = kilobyte_to_gigabyte;
+
+  } else if (unidade_armazenanento == "megabyte") {
+    var setLabel = document.getElementById("td_megabyte").innerHTML = "-";
+
+    var megabyte_to_bit = round((valor * 8388608), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = megabyte_to_bit;
+    var megabyte_to_kilobit = round((valor * 8192), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = megabyte_to_kilobit;
+
+    var megabyte_to_megabit = round((valor * 8), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = megabyte_to_megabit;
+
+    var megabyte_to_gigabit = round((valor * 0.0078125), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = megabyte_to_gigabit;
+
+    var megabyte_to_byte = round((valor * 1048576), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = megabyte_to_byte;
+
+    var megabyte_to_kilobyte = round((valor * 1024), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = megabyte_to_kilobyte;
+
+    var megabyte_to_gigabyte = round((valor * 0.0009765625), 3);
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = megabyte_to_gigabyte;
+
+  } else if (unidade_armazenanento == "gigabyte") {
+    var setLabel = document.getElementById("td_gigabyte").innerHTML = "-";
+
+    var gigabyte_to_bit = round((valor * 8589934592), 3);
+    var setLabel = document.getElementById("td_bit").innerHTML = gigabyte_to_bit;
+
+    var gigabyte_to_kilobit = round((valor * 8388608), 3);
+    var setLabel = document.getElementById("td_kilobit").innerHTML = gigabyte_to_kilobit;
+
+    var gigabyte_to_megabit = round((valor * 8192), 3);
+    var setLabel = document.getElementById("td_megabit").innerHTML = gigabyte_to_megabit;
+
+    var gigabyte_to_gigabit = round((valor * 8), 3);
+    var setLabel = document.getElementById("td_gigabit").innerHTML = gigabyte_to_gigabit;
+
+    var gigabyte_to_byte = round((valor * 1073741824), 3);
+    var setLabel = document.getElementById("td_byte").innerHTML = gigabyte_to_byte;
+
+    var gigabyte_to_megabyte = round((valor * 1024), 3);
+    var setLabel = document.getElementById("td_megabyte").innerHTML = gigabyte_to_megabyte;
+
+    var gigabyte_to_kilobyte = round((valor * 1048576), 3);
+    var setLabel = document.getElementById("td_kilobyte").innerHTML = gigabyte_to_kilobyte;
+  } else {
+    Alert("Introduza um valor correto !");
+  }
+}
 //FORMULA RESOLVENTE
 <!--
 
@@ -551,3 +752,11 @@ function quadData1() {
     document.quadCalc.answer5.value = sec_dx + " , " + sec_dy;
   }
 }
+
+
+// REGRA DE 3 SIMPLES
+
+  function regra3(a,b,c)
+    {
+      return (b*c)/a;
+    }
