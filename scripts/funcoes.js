@@ -9,6 +9,31 @@ function exitFromApp() {
 function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
+
+
+/* CONVERSOR DE MOEDA*/
+
+    // Load exchange rates data via AJAX:
+    $.getJSON('https://openexchangerates.org/api/latest.json?app_id=5ea5c3c82e364dc1a7b1e157d4592e7c',function(data) {
+            // Check money.js has finished loading:
+            if ( typeof fx !== "undefined" && fx.rates ) {
+                fx.rates = data.rates;
+                fx.base = data.base;
+            } else {
+                // If not, apply to fxSetup global:
+                var fxSetup = {
+                    rates : data.rates,
+                    base : data.base
+                }
+            }
+        }
+    );
+
+var moeda1 = getElementById(select_moeda1).value;
+var moeda2 = getElementById(select_moeda2).value;
+var valormoeda = getElementById(valormoeda).value;
+
+
 /* ++++++++ CONVERSOR DE MEDIDAS +++++++++++
 
  ++++++++ CONVERSOR DE PESO ++++++++++++++*/
@@ -756,7 +781,6 @@ function quadData1() {
 
 // REGRA DE 3 SIMPLES
 
-  function regra3(a,b,c)
-    {
-      return (b*c)/a;
-    }
+function regra3(a, b, c) {
+  return (b * c) / a;
+}

@@ -1,3 +1,31 @@
+/*Money Exchange Rates */
+
+.ui-header .ui-title,
+.ui-footer .ui-title,
+.ui-btn-inner *
+{
+   white-space: normal !important;
+}
+
+.photo
+{
+   text-align: center;
+}
+
+#result-title
+{
+   margin-bottom: 0.2em
+}
+
+#result
+{
+   display: block;
+   font-size: 1.5em;
+   text-align: center;
+}
+
+/*Other stuff */
+
 #wrapper {
     margin:0 auto;
     width:1239px;
@@ -30,4 +58,36 @@ tabela
   .my-custom-breakpoint th .ui-table-cell-label {
     display: none;
   }
+}
+
+body, h2, h3{
+	font-family: 'Arvo', serif;
+	color:#444;
+	font-size:1.6em;
+}
+.container{
+	width:90%;
+	margin:30px auto;
+	padding:25px;
+	min-height:400px;
+	height:auto;
+}
+select, input{
+	padding:10px;
+	border:1px solid #a1a1a1;
+	font-size:14px;
+}
+#exchange{
+	padding:15px;
+	width:250px;
+}
+.form{
+	text-align:center;
+	width:70%;
+	margin:0 auto;
+	border-radius:10px;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border:1px solid #a1a1a1;
+	padding:40px;
 }

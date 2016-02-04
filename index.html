@@ -15,10 +15,9 @@
   <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
   <!-- Include no JQuery Mobile FlatUI-->
-  <link rel="stylesheet" type="text/css" href="jquery.mobile.flatui.css" />
+  <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css" />
 
   <!-- Include do Script para as Dropdowns-->
-  <script src="scripts/jquery.ddslick.js"></script>
   <script src="scripts/jquery.ddslick.min.js"></script>
 
   <!-- Include de Funcoes Javascript do Trabalho-->
@@ -30,6 +29,11 @@
   <!-- Fontawesome CDN -->
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha256-3dkvEK0WLHRJ7/Csr0BZjAWxERc5WH7bdeUya2aXxdU= sha512-+L4yy6FRcDGbXJ9mPG8MT/3UCDzwR9gPeyFNMCtInsol++5m3bk2bXWKdZjvybmohrAsn3Ua5x8gfLnbE1YkOg=="
   crossorigin="anonymous">
+
+  <!-- Include de Funcoes JS money.js-->
+  <script src="scripts/money.js"></script>
+
+  <script src="scritps/jquery.mobile.config.js"></script>
 
 </head>
 
@@ -47,7 +51,8 @@
       <!-- <img src="images/convertermoeda128.png" alt="conversor de moedas"></img> -->
       <a href="#ConversorMoedas">Ir para Conversor Moedas</a>
       <br>
-      <a href="#ConversorMedidas">Conversor Medidas</a><br/>
+      <a href="#ConversorMedidas">Conversor Medidas</a>
+      <br/>
       <a href="#FormulaResolvente">Formula Resolvente</a>
       <br />
     </div>
@@ -66,17 +71,45 @@
     <div data-role="header" data-position="fixed">
       <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
       <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+       <a href="#" id="update-button" data-icon="refresh" data-iconpos="notext" class="ui-btn-right"></a>
       <h1>Conversor de Moedas</h1>
     </div>
 
 
     <div data-role="main" class="ui-content">
+      <div data-role="content">
+            <label id="last-update-label">Last update rates:</label>
+            <span id="last-update"></span>
+            <form id="form-converter" name="form-converter" action="#">
+              <h2 id="convert-title">Convert</h2>
+              <div data-role="fieldcontain">
+                <label for="from-value" id="from-value-label">Value:</label>
+                <input type="number" id="from-value" name="from-value" pattern="[0-9]*" value="0" min="0" max="999999999999999" />
+              </div>
+              <div data-role="fieldcontain">
+                <label for="from-type" id="from-type-label">From Currency:</label>
+                <select id="from-type">
+                </select>
+              </div>
+              <div data-role="fieldcontain">
+                <label for="to-type" id="to-type-label">To Currency:</label>
+                <select id="to-type">
+                </select>
+              </div>
 
-      Introduza o valor
-      <br>
-      <input type="text" name="valor">
-      <br>
-      <div id="Moeda"></div>
+              <h2 id="result-title">Result</h2>
+              <output id="result" name="result" for="from-value from-type to-type">0</output>
+
+              <div class="ui-grid-a">
+                <div class="ui-block-a">
+                  <input id="reset-button" type="reset" value="Reset" data-icon="delete" data-theme="c" />
+                </div>
+                <div class="ui-block-b">
+                  <input id="submit-button" type="submit" value="Convert" data-icon="check" />
+                </div>
+              </div>
+            </form>
+          </div>
 
 
     </div>
@@ -84,6 +117,7 @@
 
     <div data-role="footer">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+      <a id="credits-button" href="creditos.html" data-icon="info" data-iconpos="notext" data-prefetch="prefetch" data-transition="flip" class="ui-btn-right"></a>
     </div>
 
   </div>
@@ -486,27 +520,4 @@
       <div data-role="footer">
         <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
       </div>
-<!--
-      <div data-role="page" id="Regra3Simples">
-        <div data-role="header" data-position="fixed">
-          <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-          <a href="#Opcoes" data-icon="gear" class="ui-btn-right">Opções</a>
-          <h1>Regra 3 Simples</h1>
-        </div>
-
-        <div data-role="main" class="ui-content">
-          <input type="text" name="valor_a">
-          <input type="text" name="valor_b">
-          <input type="text" name="valor_c">
-          <input type="text" name="valor_d" readonly>
-            <a href="#" data-role="button" id="regra3_resultado" onClick=regra3()>Link button</a>
-          </button>
-        </div>
-
-
-        <div data-role="footer">
-          Footer do Menu Inicial
-          <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-        </div>
-      </div> -->
 </body>
