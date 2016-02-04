@@ -29,10 +29,7 @@ function round(value, decimals) {
         }
     );
 
-var moeda1 = getElementById(select_moeda1).value;
-var moeda2 = getElementById(select_moeda2).value;
-var valormoeda = getElementById(valormoeda).value;
-
+/* CONVERSOR DE MOEDAS FUNCOES AUXILIARES*/
 
 /* ++++++++ CONVERSOR DE MEDIDAS +++++++++++
 
