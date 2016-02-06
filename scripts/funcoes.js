@@ -48,12 +48,12 @@ document.getElementById("x3_imaginario").value = -term1;
 } // End if (discrim > 0)
 
 // The remaining options are all real
-document.getelementbyId("x3_imaginario").value = document.getElementById("x2_imaginario").value = 0;
+document.getElementById("x3_imaginario").value = document.getElementById("x2_imaginario").value = 0;
 
 if (discrim == 0){ // Todas as raizes sao reais.
  r13 = ((r < 0) ? -Math.pow(-r,(1.0/3.0)) : Math.pow(r,(1.0/3.0)));
- document.getelementbyId("x1_real").value = -term1 + 2.0*r13;
- document.getelementbyId("x3_real").value = document.getElementById("x2_real").value = -(r13 + term1);
+ document.getElementById("x1_real").value = -term1 + 2.0*r13;
+ document.getElementById("x3_real").value = document.getElementById("x2_real").value = -(r13 + term1);
  return;
 } // End if (discrim == 0)
 

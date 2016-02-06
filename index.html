@@ -33,7 +33,7 @@
   <div data-role="page" id="MenuInicial">
     <div data-role="header" data-position="fixed">
       <a href="javascript:navigator.app.exitApp()" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-      <a href="creditos.html" data-icon="flat-heart" class="ui-btn-right">Creditos</a>
+      <a href="#creditos" data-icon="flat-heart" class="ui-btn-right">Creditos</a>
       <h1>Cáculos Rápidos</h1>
     </div>
 
@@ -415,7 +415,7 @@
 
     <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-      <a id="credits-button" href="creditos.html" data-icon="info" data-iconpos="notext" data-prefetch="prefetch" data-transition="flip" class="ui-btn-right"></a>
+      <a id="credits-button" href="#creditos" data-icon="info" data-iconpos="notext" data-prefetch="prefetch" data-transition="flip" class="ui-btn-right"></a>
     </div>
 
   </div>
@@ -446,7 +446,7 @@
     </div>
     <!--Fim da Div do Main da Pagina do Conversor de Medidas -->
 
-    <div data-role="footer"data-position="fixed">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
 
@@ -791,24 +791,33 @@
     </div>
 
     <div data-role="main" class="ui-content">
-      <sup>A</sup>&frasl;<sub>B</sub> = <sup>C</sup>&frasl;<sub>X</sub>
-      <P>
 
-        A
-        <input type="number" name="a" id="regra3_A">
-        <P>
-          B
-          <input type="number" name="b" id="regra3_B">
-          <P>
-            C
-            <input type="number" name="c" id="regra3_C">
-            <P>
 
-              Resultado (X):
-              <input type="number" id="valordex" readonly>
 
+
+<div align="center">
+  <p>
+    A está para B assim como C está para X
+<br /><br />
+  A ---------- B
+  <br />
+C ---------- X
+  </p>
+</div>
+
+
+        <fieldset class="ui-grid-a">
+        <div class="ui-block-a"><label for="regra3_A">A</label><input type="number" name="a" id="regra3_A"></div>
+        <div class="ui-block-b"><label for="regra3_B">B</label><label for="regra3_A"></label><input type="number" name="a" id="regra3_B"></div>
+        </fieldset>
+
+        <fieldset class="ui-grid-a">
+          <div class="ui-block-a"><label for="regra3_C">C</label><input type="number" name="a" id="regra3_C"></div>
+        <div class="ui-block-b"><label for="valordex">X</label><input type="number" name="a" id="valordex" readonly></div>
+        </fieldset>
               <button id="btn_regra3" text="calcular" onClick="regra_3_simples()">Calcular</button>
     </div>
+
     <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
@@ -834,13 +843,11 @@
           Resultado (x):
           <input type="number" id="raizn_resultado" readonly>
     </div>
-    <div data-role="footer" data-position="fixed">
+    <div data-role="footer"  data-position="fixed" >
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
   </div>
 
-
-  /* Tabs
   <div data-role="page" id="ResolverEquacoes">
     <div data-role="header" data-position="fixed">
       <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
@@ -873,7 +880,7 @@
         </div>
         <div id="3Grau">
           <div>
-            <p class="cardica">Voc&ecirc; pode inserir os coeficientes reais <strong>a, </strong><strong>b, c </strong>&amp; <strong>d</strong> de equa&ccedil;&otilde;es da forma:</p>
+            <p class="cardica">Insira os coeficientes reais <strong>a, </strong><strong>b, c </strong>&amp; <strong>d</strong> de equa&ccedil;&otilde;es da forma:</p>
             <p align="center" class="cardica"><em>ax<SUP>3</SUP> + b<em>x<SUP>2</SUP></em> + cx + d = 0</em>.</p>
             <p class="cardica">Os coeficientes podem ser quaisquer n&uacute;meros reais (a n&atilde;o nulo). Lembre-se que se todos os coeficientes s&atilde;o reais, ent&atilde;o pelo menos uma raiz ser&aacute; real. <span class="style4">N&atilde;o deixe campos em branco.</span></p>
             <form name="form1">
@@ -950,7 +957,7 @@
                         <td>i</td>
                       </tr>
                     </table>
-            </form> Como o método de cálculo é numérico, aproveite alguns tipos de resuldados de p(x) = 0 para fazer os cálculos na mão. Por exemplo, aproveitar uma raíz A para dividir p(x) por x - A e resolver a equação do 2° grau.
+            </form> Como o método de cálculo é numérico, aproveite alguns tipos de resuldados de p(x) = 0 para fazer os cálculos à mão. Por exemplo, aproveitar uma raíz A para dividir p(x) por x - A e resolver a equação do 2° grau.
             <br>
             <br> Tente ver se uma solução aproximada é, na verdade, um número racional. Por exemplo, é apresentado que uma solução 1,99999999999 que pode ser o número 2. Basta, para tirar essa dúvida verificar se p(2) = 0. </div>
         </div>
@@ -959,7 +966,6 @@
   </div>
 <!-- Teorema de pitágoras-->
 
-/* Tabs
 <div data-role="page" id="TeoremaPitagoras">
   <div data-role="header" data-position="fixed">
     <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
@@ -1010,8 +1016,35 @@
                     Valor do cateto:
                     <input type="number" id="pitagoras_catetos" readonly>
         </div>
+              <button id="btn_regra3" text="calcular" onClick="regra_3_simples()">Calcular</button>
+    </div>
+    <div data-role="footer"  data-position="fixed">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
   </div>
 </div><!-- Fecha as tabs -->
 </div> <!-- Fecha a main -->
 </div><!-- Fecha a page -->
+<div id="creditos" data-role="page">
+  <header data-role="header" data-position="fixed">
+    <a href="#" data-icon="back" data-iconpos="notext" data-rel="back" title="Go back">Back</a>
+    <h1>Créditos dos Autores</h1>
+  </header>
+  <div id="content" data-role="content">
+    <div class="person">
+      <figure class="photo">
+        <img src="images/autores.jpg" alt="Photo dos Autores" />
+        <figcaption>Rafael e Filipa</figcaption>
+      </figure>
+      <article>
+        <p>
+        Somos um casal de namorados que decidimos fazer um trabalho para a cadeira de SIDM.
+        </p>
+      </article>
+    </div>
+  </div>
+  <div data-role="footer" data-position="fixed">
+    <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+  </div>
+</div>
 </body>
