@@ -1,3 +1,75 @@
+function raizcubica(){
+  var a = document.getElementById("3grau_A").value;
+  console.log(a);
+  var b = document.getElementById("3grau_B").value;
+  console.log(b);
+  var c = document.getElementById("3grau_C").value;
+  console.log(c);
+  var d = document.getElementById("3grau_D").value;
+  console.log(d);
+
+if (a == 0){
+ alert("O coeficiente do cubo não pode ser 0.");
+ return;
+} //End if a == 0
+
+if (d == 0){
+ alert("Bem, uma raiz é 0. Divida a equação polinomial por x e use o utilitário para resolver a equação do segundo grau resultante e determinar as outras duas raizes. Aqui nada mais há a ser feito.");
+ return;
+} //End if d == 0
+
+b /= a;
+c /= a;
+d /= a;
+
+var discrim, q, r, dum1, s, t, term1, r13;
+
+q = (3.0*c - (b*b))/9.0;
+r = -(27.0*d) + b*(9.0*c - 2.0*(b*b));
+r /= 54.0;
+
+discrim = q*q*q + r*r;
+document.getElementById("x1_imaginario").value = 0;
+//dataForm.x1_imaginario.value = 0; //A primeira raiz é sempre real.
+term1 = (b/3.0);
+
+if (discrim > 0) { // uma real, duas imaginarias
+ s = r + Math.sqrt(discrim);
+ s = ((s < 0) ? -Math.pow(-s, (1.0/3.0)) : Math.pow(s, (1.0/3.0)));
+ t = r - Math.sqrt(discrim);
+ t = ((t < 0) ? -Math.pow(-t, (1.0/3.0)) : Math.pow(t, (1.0/3.0)));
+ document.getElementById("x1_real").value = (-term1 + s + t);
+ term1 += (s + t)/2.0;
+ document.getElementById("x3_real").value = document.getElementById("x2_real").value = -term1 ;
+ term1 = Math.sqrt(3.0)*(-t + s)/2;
+ document.getElementById("x2_imaginario").value = term1;
+document.getElementById("x3_imaginario").value = -term1;
+ return;
+} // End if (discrim > 0)
+
+// The remaining options are all real
+document.getelementbyId("x3_imaginario").value = document.getElementById("x2_imaginario").value = 0;
+
+if (discrim == 0){ // Todas as raizes sao reais.
+ r13 = ((r < 0) ? -Math.pow(-r,(1.0/3.0)) : Math.pow(r,(1.0/3.0)));
+ document.getelementbyId("x1_real").value = -term1 + 2.0*r13;
+ document.getelementbyId("x3_real").value = document.getElementById("x2_real").value = -(r13 + term1);
+ return;
+} // End if (discrim == 0)
+
+// Opcao deixada para onde todas as raizes sao reais e distintas (q < 0)
+q = -q;
+dum1 = q*q*q;
+dum1 = Math.acos(r/Math.sqrt(dum1));
+r13 = 2.0*Math.sqrt(q);
+document.getElementById("x1_real").value= -term1 + r13*Math.cos(dum1/3.0);
+document.getElementById("x2_real").value = -term1 + r13*Math.cos((dum1 + 2.0*Math.PI)/3.0);
+document.getElementById("x3_real").value = -term1 + r13*Math.cos((dum1 + 4.0*Math.PI)/3.0);
+return;
+
+}
+
+
 // Função para Fechar a aplicação a partir do menu superior
 function exitFromApp() {
   console.log("A Fechar Aplicação");
@@ -9,7 +81,7 @@ function exitFromApp() {
 function round(value, decimals) {
   return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
 }
-
+/*
 function validate(evt) {
   var theEvent = evt || window.event;
   var key = theEvent.keyCode || theEvent.which;
@@ -19,7 +91,7 @@ function validate(evt) {
     theEvent.returnValue = false;
     if(theEvent.preventDefault) theEvent.preventDefault();
   }
-}
+}*/
 
 /* CONVERSOR DE MOEDA*/
 
@@ -43,6 +115,7 @@ $.getJSON('https://openexchangerates.org/api/latest.json?app_id=5ea5c3c82e364dc1
 function calcular_raizes() {
 
   var valA = document.getElementById("valA").value;
+  var checkA = (valA == 0); //valor booleano para verificar se A é igual a 0
   var valB = document.getElementById("valB").value;
   var valC = document.getElementById("valC").value;
   var rootPart = Math.sqrt(valB * valB - 4 * valA * valC);
@@ -51,22 +124,77 @@ function calcular_raizes() {
   var root1 = (-valB + rootPart) / denom;
   var root2 = (-valB - rootPart) / denom;
 
-  document.getElementById("raiz1").innerHTML = root1;
-  document.getElementById("raiz2").innerHTML = root2;
+ if (checkA == true)
+ {
+   document.getElementById("raiz_1").value = "O valor de A não pode ser 0,";
+   document.getElementById("raiz_2").value = "pois torna esta equação linear";
+ }
+ else {
+
+
+
+  if (isNaN(root1) == true)
+  {
+    console.log("solucao é valor complexo");
+    document.getElementById("raiz_1").value = "Solução é número complexo";
+    document.getElementById("raiz_2").value = "Solução é número complexo";
+  }
+  else if (isNaN(root2) == true)
+  {
+    console.log("solucao é valor complexo");
+      document.getElementById("raiz_1").value = "Solução é número complexo";
+    document.getElementById("raiz_2").value = "Solução é número complexo";
+      }
+  else
+  {
+  document.getElementById("raiz_1").value = root1;
+  document.getElementById("raiz_2").value = root2;
+  }
 }
+}
+
+/* Raiz ordem N */
+
+function nthRoot() {
+  var n = document.getElementById("raizn_n").value || 2;
+  var prec =  12;
+  var num = document.getElementById("raizn_a").value;
+
+  var x = 1; // Initial guess.
+  for (var i=0; i<prec; i++) {
+    x = 1/n * ((n-1)*x + (num / Math.pow(x, n-1)));
+  }
+
+  document.getElementById("raizn_resultado").value = x;
+}
+
+/*
 
 
 
 /* Teorema de pitagoras*/
 
-function pitagoras() {
+function pitagoras_hipotenusa() {
 
   var valA = (document.getElementById("pitagoras_A").value * document.getElementById("pitagoras_A").value);
   var valB = (document.getElementById("pitagoras_B").value * document.getElementById("pitagoras_B").value);
 
   var valH = Math.sqrt(valA + valB);
 
-  document.getElementById("hipotenusa").value = valH;
+document.getElementById("pitagoras_hipotenusa").value = valH;
+
+}
+function pitagoras_cateto() {
+
+  var valH = (document.getElementById("pitagoras2_H").value * document.getElementById("pitagoras2_H").value);
+  var valC = (document.getElementById("pitagoras2_C").value * document.getElementById("pitagoras2_C").value);
+  console.log("valH",valH);
+  console.log("valC",valC);
+  var aux = (valH - valC);
+  console.log("aux= ",aux);
+  var valResult = Math.sqrt(aux)  ;
+  console.log("resultado",valResult);
+document.getElementById("pitagoras_cateto").value = valResult;
 
 }
 

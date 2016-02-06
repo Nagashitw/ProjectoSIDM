@@ -40,21 +40,22 @@
     <div data-role="main" class="ui-content">
       <!-- Main do Menu Inicial -->
       <!-- <img src="images/convertermoeda128.png" alt="conversor de moedas"></img> -->
-       <fieldset class="ui-grid-a">
-    <div class="ui-block-a ">  <a href="#ConversorMoedas" data-role="button" data-icon="flat-settings" data-theme="b">Conversor Moedas</a></div>
-    <div class="ui-block-b">  <a href="#ConversorMedidas" data-role="button" data-icon="flat-cmd" data-theme="c">Conversor Medidas</a></div>
- </fieldset>
-   <fieldset class="ui-grid-a">
-  <div class="ui-block-a">    <a href="#FormulaResolvente" data-role="button" data-icon="flat-new"data-theme="d">Formula Resolvente</a></div>
-  <div class="ui-block-b">    <a href="#TeoremaPitagoras" data-role="button"data-icon="flat-man" data-theme="e">Teorema de Pitagoras</a></div>
-    </fieldset>
-     <fieldset class="ui-grid-a">
-  <div class="ui-block-a">    <a href="#regra3simples"data-role="button" data-icon="flat-heart" data-theme="f" >Regra de 3 Simples  </a></div>
-    </fieldset>
+
+        <div class="ui-block-a "> <a href="#ConversorMoedas" data-role="button" data-icon="flat-settings" data-theme="b">Conversor Moedas</a></div>
+        <div class="ui-block-b"> <a href="#ConversorMedidas" data-role="button" data-icon="flat-cmd" data-theme="c">Conversor Medidas</a></div>
+
+
+        <div class="ui-block-a"> <a href="#ResolverEquacoes" data-role="button" data-icon="flat-new" data-theme="d">Equações</a></div>
+        <div class="ui-block-b"> <a href="#TeoremaPitagoras" data-role="button" data-icon="flat-man" data-theme="e">Pitágoras</a></div>
+
+
+        <div class="ui-block-a"> <a href="#regra3simples" data-role="button" data-icon="flat-heart" data-theme="f">Regra de 3 Simples  </a></div>
+        <div class="ui-block-b"> <a href="#raiz_n" data-role="button" data-icon="flat-heart" data-theme="a">Raíz de Ordem N  </a></div>
+
     </div>
     <!--Fim da Div do Main da Pagina inicial -->
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <!-- Footer do Menu Inicial -->
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
@@ -412,7 +413,7 @@
     </div>
     <!--Fim da Div do Main da Pagina do Conversor de Moedas -->
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
       <a id="credits-button" href="creditos.html" data-icon="info" data-iconpos="notext" data-prefetch="prefetch" data-transition="flip" class="ui-btn-right"></a>
     </div>
@@ -431,20 +432,21 @@
 
     <div data-role="main" class="ui-content">
 
-      <a href="#ConversorPeso">Converter Peso</a>
-      <br />
-      <a href="#ConversorComprimento">Conversor Comprimento</a>
-      <br />
-      <a href="#ConversorVelocidade">Conversor Velocidade</a>
-      <br />
-      <a href="#ConversorArmazenamento">Conversor Armazenamento</a>
-      <br />
+
+
+        <div class="ui-block-a "> <a href="#ConversorPeso" data-role="button" data-icon="flat-settings" data-theme="b">Peso</a></div>
+        <div class="ui-block-a"> <a href="#ConversorComprimento" data-role="button" data-icon="flat-cmd" data-theme="c">Comprimento</a></div>
+
+
+        <div class="ui-block-a"> <a href="#ConversorVelocidade" data-role="button" data-icon="flat-new" data-theme="d">Velocidade</a></div>
+        <div class="ui-block-a"> <a href="#ConversorArmazenamento" data-role="button" data-icon="flat-man" data-theme="e">Armazenamento</a></div>
+
 
 
     </div>
     <!--Fim da Div do Main da Pagina do Conversor de Medidas -->
 
-    <div data-role="footer">
+    <div data-role="footer"data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
 
@@ -526,7 +528,7 @@
 
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
 
@@ -621,7 +623,7 @@
 
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
 
@@ -681,7 +683,7 @@
 
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
 
@@ -770,7 +772,7 @@
 
     </div>
 
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
 
@@ -780,67 +782,6 @@
 
   </div>
 
-
-  <div data-role="page" id="FormulaResolvente">
-    <div data-role="header" data-position="fixed">
-      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-      <h1>Fórmula Resolvente</h1>
-    </div>
-
-    <div data-role="main" class="ui-content">
-
-
-      <b>Fórmula Resolvente</b> Uma equação quadrática é uma curva da família das parábolas
-      <br /> As equações quadráticas têm o formato: ax<sup>2</sup>+bx+c=0.
-      <br />
-      <br />A
-      <input type="number" id="valA" name="valA">B
-      <input type="number" id="valB" name="valB">C
-      <input type="number" id="valC" name="valC">
-
-      <button id="btn_raizescalcular" text="calcular" onClick="calcular_raizes()">Calcular</button>
-      Raiz 1:
-      <label id="raiz1"></label>
-      Raiz 2:
-      <label id="raiz2"></label>
-    </div>
-
-    <div data-role="footer">
-      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-    </div>
-  </div>
-
-  <div data-role="page" id="TeoremaPitagoras">
-    <div data-role="header" data-position="fixed">
-      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
-      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
-      <h1>TeoremaPitagoras</h1>
-    </div>
-
-    <div data-role="main" class="ui-content">
-
-
-      <P>Teorema de Pitagoras
-        <BR> h&sup2= a &sup2 + b&sup2
-        <P>
-
-          a
-          <input type="number" name="a" id="pitagoras_A">
-          <P>
-            b
-            <input type="number" name="b" id="pitagoras_B">
-            <P>
-              <button id="btn_teoremacalcular" text="calcular" onClick="pitagoras()">Calcular</button>
-              <P>
-                Output:
-                <input type="number" id="hipotenusa" readonly>
-
-    </div>
-    <div data-role="footer">
-      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
-    </div>
-  </div>
 
   <div data-role="page" id="regra3simples">
     <div data-role="header" data-position="fixed">
@@ -868,8 +809,209 @@
 
               <button id="btn_regra3" text="calcular" onClick="regra_3_simples()">Calcular</button>
     </div>
-    <div data-role="footer">
+    <div data-role="footer" data-position="fixed">
       <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
     </div>
   </div>
+  <div data-role="page" id="raiz_n">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Raíz de ordem N</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+      <p>
+    <center>  <img src= "images/raizordemn.png"></img></center>
+      </p>
+      n
+      <input type="number" name="n" id="raizn_n" onkeypress="nthRoot()">
+      <P>
+        a
+        <input type="number" name="a" id="raizn_a" onkeyup="nthRoot()">
+        <P>
+
+          Resultado (x):
+          <input type="number" id="raizn_resultado" readonly>
+    </div>
+    <div data-role="footer" data-position="fixed">
+      <h1>Desenvolvido por Bruno Ribeiro & Cláudia Trigo</h1>
+    </div>
+  </div>
+
+
+  /* Tabs
+  <div data-role="page" id="ResolverEquacoes">
+    <div data-role="header" data-position="fixed">
+      <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+      <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+      <h1>Solver de Equações</h1>
+    </div>
+    <div role="main" class="ui-content">
+      <div data-role="tabs">
+        <div data-role="navbar">
+          <ul>
+            <li><a href="#2Grau" class="ui-btn-active">2.º Grau</a></li>
+            <li><a href="#3Grau">3.º Grau</a></li>
+          </ul>
+        </div>
+        <div id="2Grau">
+          <div>
+            <b>Fórmula Resolvente</b> Uma equação quadrática é uma curva da família das parábolas
+            <br /> As equações quadráticas têm o formato: ax<sup>2</sup>+bx+c=0.
+            <br />
+            <br />A
+            <input type="number" id="valA" name="valA">B
+            <input type="number" id="valB" name="valB">C
+            <input type="number" id="valC" name="valC">
+
+            <button id="btn_raizescalcular" text="calcular" onClick="calcular_raizes()">Calcular</button>
+            Raiz 1:
+            <input type="text" id="raiz_1" name="raiz1" readonly> Raiz 2:
+            <input type="text" id="raiz_2" name="raiz2" readonly>
+          </div>
+        </div>
+        <div id="3Grau">
+          <div>
+            <p class="cardica">Voc&ecirc; pode inserir os coeficientes reais <strong>a, </strong><strong>b, c </strong>&amp; <strong>d</strong> de equa&ccedil;&otilde;es da forma:</p>
+            <p align="center" class="cardica"><em>ax<SUP>3</SUP> + b<em>x<SUP>2</SUP></em> + cx + d = 0</em>.</p>
+            <p class="cardica">Os coeficientes podem ser quaisquer n&uacute;meros reais (a n&atilde;o nulo). Lembre-se que se todos os coeficientes s&atilde;o reais, ent&atilde;o pelo menos uma raiz ser&aacute; real. <span class="style4">N&atilde;o deixe campos em branco.</span></p>
+            <form name="form1">
+              <p>
+                <p align="center" class="cardica"><em>
+                                       <input id="3grau_A" type = "text" size="4">
+                                 x<SUP>3</SUP>&nbsp; +
+                                 <input id="3grau_B" type = "text" size="4">
+                                 <em>x<SUP>2</SUP></em>&nbsp; +
+                  <input id="3grau_C" type="text" size="4"> x&nbsp; +
+                  <input id="3grau_D" type="text" size="4"> = 0</em>.
+                  <p align="center">
+                    <input type="button" name="button1" value="Calcule as solu&ccedil;&otilde;es" onClick="raizcubica()">
+                    <p>&nbsp;</p>
+                    <table width="100%" cellpadding="5" cellspacing="3">
+                      <tr>
+                        <td width="50">
+                          <div align="center"></div>
+                        </td>
+                        <td>parte real </td>
+                        <td>&nbsp;</td>
+                        <td>parte imagin&aacute;ria </td>
+                        <td>&nbsp;</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div align="right" class="cardica">
+                            <div align="left">x<sub>1</sub><font color="#333333"></font></div>
+                          </div>
+                        </td>
+                        <td>
+                          <input type="number" readonly id="x1_real" size="25">
+                        </td>
+                        <td>
+                          <div align="center">+</div>
+                        </td>
+                        <td>
+                          <input type="number" readonly id="x1_imaginario" size="25">
+                        </td>
+                        <td>i</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div align="right" class="cardica">
+                            <div align="left">x<sub>2</sub><font color="#333333"></font></div>
+                          </div>
+                        </td>
+                        <td>
+                          <input type="text" readonly id="x2_real" size="25">
+                        </td>
+                        <td>
+                          <div align="center">+</div>
+                        </td>
+                        <td>
+                          <input type="text" readonly id="x2_imaginario" size="25">
+                        </td>
+                        <td>i</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div align="right" class="cardica">
+                            <div align="left">x<sub>3</sub><font color="#333333"></font></div>
+                          </div>
+                        </td>
+                        <td>
+                          <input type="text" readonly id="x3_real" size="25">
+                        </td>
+                        <td>
+                          <div align="center">+</div>
+                        </td>
+                        <td>
+                          <input type="text" readonly id="x3_imaginario" size="25">
+                        </td>
+                        <td>i</td>
+                      </tr>
+                    </table>
+            </form> Como o método de cálculo é numérico, aproveite alguns tipos de resuldados de p(x) = 0 para fazer os cálculos na mão. Por exemplo, aproveitar uma raíz A para dividir p(x) por x - A e resolver a equação do 2° grau.
+            <br>
+            <br> Tente ver se uma solução aproximada é, na verdade, um número racional. Por exemplo, é apresentado que uma solução 1,99999999999 que pode ser o número 2. Basta, para tirar essa dúvida verificar se p(2) = 0. </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- Teorema de pitágoras-->
+
+/* Tabs
+<div data-role="page" id="TeoremaPitagoras">
+  <div data-role="header" data-position="fixed">
+    <a href="#" data-rel="back" data-icon="back" class="ui-btn-left">Back</a>
+    <a href="index.html" data-icon="home" class="ui-btn-right">Home</a>
+    <h1>Teorema de Pitágoras</h1>
+  </div>
+  <div role="main" class="ui-content">
+    <h3>Escolha o lado que deseja calcular:</h3>
+    <div data-role="tabs">
+      <div data-role="navbar">
+        <ul>
+          <li><a href="#hipotenusa" class="ui-btn-active">Hipotenusa</a></li>
+          <li><a href="#catetos">Cateto</a></li>
+        </ul>
+      </div>
+      <div id="hipotenusa">
+        <div>
+          <P>Teorema de Pitagoras
+            <BR> h&sup2= a &sup2 + b&sup2
+            <P>
+
+              a
+              <input type="number" name="a" id="pitagoras_A">
+              <P>
+                b
+                <input type="number" name="b" id="pitagoras_B">
+                <P>
+                  <button id="btn_teoremacalcular" text="calcular" onClick="pitagoras_hipotenusa()">Calcular</button>
+                  <P>
+                    Valor da Hipotenusa:
+                    <input type="number" id="pitagoras_hipotenusa" readonly>
+        </div>
+      </div>
+      <div id="catetos">
+        <div>
+          <P>Teorema de Pitagoras
+            <BR> a&sup2= h &sup2 - b&sup2
+            <P>
+
+              h
+              <input type="number" name="H" id="pitagoras2_H">
+              <P>
+                b
+                <input type="number" name="b" id="pitagoras2_C">
+                <P>
+                  <button id="btn_teoremacalcular" text="calcular" onClick="pitagoras_cateto()">Calcular</button>
+                  <P>
+                    Valor do cateto:
+                    <input type="number" id="pitagoras_catetos" readonly>
+        </div>
+  </div>
+</div><!-- Fecha as tabs -->
+</div> <!-- Fecha a main -->
+</div><!-- Fecha a page -->
 </body>
