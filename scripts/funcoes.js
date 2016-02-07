@@ -1,4 +1,22 @@
-
+$.getJSON(
+    //   sing Open Exchange Rates here, but you can use any source!
+    //'https://calcutil.firebaseio.com/'
+    'https://openexchangerates.org/api/latest.json?app_id=5ea5c3c82e364dc1a7b1e157d4592e7c',
+    function(data) {
+      console.log("FUI BUSCAR A API ", JSON.stringify(data));
+      // Check money.js has finished loading:
+      if (typeof fx !== "undefined" && fx.rates) {
+        fx.rates = data.rates;
+        fx.base = data.base;
+      } else {
+        // If not, apply to fxSetup global:
+        var fxSetup = {
+          rates: data.rates,
+          base: data.base
+        }
+      }
+    }
+  );
 
 function cambios_localstorage_set(){
 window.localStorage.removeItem('TaxasCambio');
