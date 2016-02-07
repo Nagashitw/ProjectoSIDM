@@ -1,5 +1,4 @@
-function atualizar_cambios() {
-
+/*
   $.getJSON(
     //   sing Open Exchange Rates here, but you can use any source!
     //'https://calcutil.firebaseio.com/'
@@ -19,22 +18,41 @@ function atualizar_cambios() {
       }
     }
   );
-}
+}*/
 
 function cambios_localstorage_set(){
 
-  var testObject = { 'one': 1, 'two': 2, 'three': 3 };
+  var TaxasCambio =   $.getJSON(
+      //   sing Open Exchange Rates here, but you can use any source!
+      //'https://calcutil.firebaseio.com/'
+      'https://openexchangerates.org/api/latest.json?app_id=5ea5c3c82e364dc1a7b1e157d4592e7c',
+      function(data) {
+        console.log("FUI BUSCAR A API ", JSON.stringify(data));
+        // Check money.js has finished loading:
+        if (typeof fx !== "undefined" && fx.rates) {
+          fx.rates = data.rates;
+          fx.base = data.base;
+        } else {
+          // If not, apply to fxSetup global:
+          var fxSetup = {
+            rates: data.rates,
+            base: data.base
+          }
+        }
+      }
+    );
 
   // Put the object into storage
-  localStorage.setItem('testObject', JSON.stringify(testObject));
+  localStorage.setItem('TaxasCambio', JSON.stringify(TaxasCambio));
+}
 
+function cambios_localstorage_get(){
   // Retrieve the object from storage
-  var retrievedObject = localStorage.getItem('testObject');
-
-  console.log('retrievedObject: ', JSON.parse(retrievedObject));
-
+  var retrievedObject = localStorage.getItem('TaxasCambio');
+  console.log('FUI BUSCAR AO LOCALSTORAGE ', JSON.parse(retrievedObject));
 
 }
+
 
 function convertermoeda() {
   var valor = document.getElementById("amt").value;

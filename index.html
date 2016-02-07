@@ -35,7 +35,7 @@
       <!-- Main do Menu Inicial -->
       <!-- <img src="images/convertermoeda128.png" alt="conversor de moedas"></img> -->
 
-        <div class="ui-block-a "> <a href="#ConversorMoedas" data-role="button" onclick=atualizar_cambios() data-icon="flat-settings" data-theme="b">Conversor Moedas</a></div>
+        <div class="ui-block-a "> <a href="#ConversorMoedas" data-role="button" onclick="cambios_localstorage_get()" data-icon="flat-settings" data-theme="b">Conversor Moedas</a></div>
         <div class="ui-block-b"> <a href="#ConversorMedidas" data-role="button" data-icon="flat-cmd" data-theme="c">Conversor Medidas</a></div>
 
 
@@ -409,7 +409,10 @@
     <!--Fim da Div do Main da Pagina do Conversor de Moedas -->
 
     <div data-role="footer" data-position="fixed">
+
+    <center>  <a href="#" data-role="button" data-icon="refresh" onClick="cambios_localstorage_set()">Atualizar Taxas de Cambio</a>  </center>
       <h1> Bruno Ribeiro & Cláudia Trigo</h1>
+
     </div>
 
   </div>
