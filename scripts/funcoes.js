@@ -1,4 +1,4 @@
-$.getJSON(
+/*$.getJSON(
     //   sing Open Exchange Rates here, but you can use any source!
     //'https://calcutil.firebaseio.com/'
     'https://openexchangerates.org/api/latest.json?app_id=5ea5c3c82e364dc1a7b1e157d4592e7c',
@@ -16,7 +16,7 @@ $.getJSON(
         }
       }
     }
-  );
+  );*/
 
 function cambios_localstorage_set(){
 window.localStorage.removeItem('TaxasCambio');
